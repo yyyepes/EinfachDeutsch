@@ -59,10 +59,11 @@
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem; /* ⬅️ más espacio interno */
     gap: 0.5rem;
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 180px; /* ⬅️ más ancho */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* sombra suave */
   }
   
   .dropdown button {
@@ -70,7 +71,7 @@
     border: none;
     color: white;
     font-weight: bold;
-    text-align: left;
+    text-align: centers;
     cursor: pointer;
   }
   

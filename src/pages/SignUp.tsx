@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 👈 importa esto
+import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
+import { useUser } from '../Context/UserContext';
 
 export default function SignUp() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
-  const navigate = useNavigate(); // 👈 hook de navegación
+  const { setUser } = useUser(); // opcional, si deseas loguear directamente tras registrarse
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -12,7 +14,14 @@ export default function SignUp() {
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Sign Up Info:', form);
+
+    // 🚀 En el futuro: enviar datos al backend
+    console.log('Sign Up Info (ready for backend):', form);
+
+    // Ejemplo si decides iniciar sesión automáticamente:
+    // setUser({ name: form.name, email: form.email });
+
+    navigate('/');
   };
 
   return (
@@ -29,12 +38,7 @@ export default function SignUp() {
               Time to pick up where you left off. <br />
               Log in and continue learning!
             </p>
-
-            {/* 👇 Aquí va el botón que redirige */}
-            <button
-              className="sign-in-btn"
-              onClick={() => navigate('/')}
-            >
+            <button className="sign-in-btn" onClick={() => navigate('/')}>
               SIGN IN
             </button>
           </div>
@@ -52,6 +56,7 @@ export default function SignUp() {
             className="input"
             value={form.name}
             onChange={handleChange}
+            required
           />
           <input
             type="email"
@@ -60,6 +65,7 @@ export default function SignUp() {
             className="input"
             value={form.email}
             onChange={handleChange}
+            required
           />
           <input
             type="password"
@@ -68,6 +74,7 @@ export default function SignUp() {
             className="input"
             value={form.password}
             onChange={handleChange}
+            required
           />
           <button type="submit" className="signup-btn">SIGN UP</button>
         </form>

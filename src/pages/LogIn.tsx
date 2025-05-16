@@ -1,18 +1,25 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 👈 agrega esto
+import { useNavigate } from 'react-router-dom';
 import './LogIn.css';
+import { useUser } from '../Context/UserContext';
 
 export default function LogIn() {
-  const [form, setForm] = useState({ name: '', email: '', password: '' });
-  const navigate = useNavigate(); // 👈 hook de navegación
+  const [form, setForm] = useState({ email: '', password: '' });
+  const { setUser } = useUser();
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Sign Up Info:', form);
+
+    // 🚀 Simulación de login (en futuro, aquí irá tu llamada al backend)
+    setUser({ name: 'Rosibell', email: form.email });
+
+    // Redirige al home
+    navigate('/home');
   };
 
   return (
@@ -20,7 +27,7 @@ export default function LogIn() {
       <div className="login-left-section">
         <h2 className="login-title">LOG IN</h2>
         <p className="login-text">Use your email and password</p>
-        <form className="login-form" onSubmit={handleSignup}>
+        <form className="login-form" onSubmit={handleLogin}>
           <input
             type="email"
             name="email"
@@ -28,6 +35,7 @@ export default function LogIn() {
             className="login-input"
             value={form.email}
             onChange={handleChange}
+            required
           />
           <input
             type="password"
@@ -36,6 +44,7 @@ export default function LogIn() {
             className="login-input"
             value={form.password}
             onChange={handleChange}
+            required
           />
           <a href="#" className="forgot-link">Forgot your password?</a>
           <button type="submit" className="login-btn">SIGN IN</button>
@@ -57,7 +66,7 @@ export default function LogIn() {
             </p>
             <button
               className="login-signup-btn"
-              onClick={() => navigate('/signup')} // 👈 redirige al signup
+              onClick={() => navigate('/signup')}
             >
               SIGN UP
             </button>

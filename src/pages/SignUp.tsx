@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // 👈 importa esto
 import './SignUp.css';
 
 export default function SignUp() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
+  const navigate = useNavigate(); // 👈 hook de navegación
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,11 +24,20 @@ export default function SignUp() {
             <h1 className="logo">EINFACH<span className="highlight">DEUTSCH</span></h1>
           </div>
           <div className="welcome-block">
-          <h2 className="welcome-title">Willkommen!</h2>
-          <p className="welcome-text">
-            Time to pick up where you left off. <br />Log in and continue learning! </p>
-  <button className="sign-in-btn">SIGN IN</button>
-</div>
+            <h2 className="welcome-title">Willkommen!</h2>
+            <p className="welcome-text">
+              Time to pick up where you left off. <br />
+              Log in and continue learning!
+            </p>
+
+            {/* 👇 Aquí va el botón que redirige */}
+            <button
+              className="sign-in-btn"
+              onClick={() => navigate('/')}
+            >
+              SIGN IN
+            </button>
+          </div>
         </div>
       </div>
 

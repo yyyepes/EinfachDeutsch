@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // 👈 agrega esto
 import './LogIn.css';
 
 export default function LogIn() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
+  const navigate = useNavigate(); // 👈 hook de navegación
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -51,10 +53,15 @@ export default function LogIn() {
           <h2 className="login-welcome-title">Willkommen!</h2>
           <div className="login-cta-group">
             <p className="login-welcome-text">
-              Sign up and discover how fun German can be. <br /> </p>
-              <p>Learning starts here! </p>
-              <button className="login-signup-btn">SIGN UP</button>
-         </div>
+              Sign up and discover how fun German can be. <br /> Learning starts here!
+            </p>
+            <button
+              className="login-signup-btn"
+              onClick={() => navigate('/signup')} // 👈 redirige al signup
+            >
+              SIGN UP
+            </button>
+          </div>
         </div>
       </div>
     </div>

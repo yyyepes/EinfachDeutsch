@@ -8,6 +8,7 @@ import nextOp from '../assets/nextop.png';
 import Badgpen from '../assets/Ba.png';
 import Procs from '../assets/procs.png';
 import LessonBoard from './LessonBoard';
+import klaus2 from '../assets/Klaus04.png';
 
 // Boards para el LessonBoard
 const lessonBoards = [
@@ -176,11 +177,16 @@ export default function SectionView() {
                 // LessonBoard aquí
                 <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <LessonBoard boards={lessonBoards} />
-                  <div className="next-btn-wrapper" style={{ marginTop: 30 }}>
-                    <button className="next-btn" onClick={() => {
-                      setView('activities');
-                      setLessonView('');
-                    }}>
+                   {/* AQUÍ VAS A INSERTAR EL BOTÓN FINISH LESSON */}
+                     <button  className="finish-lesson-btn" onClick={() => { // Acción al terminar la lección alert('Lesson finished!'); // O redirige a otra ruta, etc.
+                      }}
+                      style={{ marginTop: 20, marginBottom: 10 }}>
+                       Finish Lesson  </button>
+                        <div className="next-btn-wrapper" style={{ marginTop: 30 }}>
+                       <button className="next-btn" onClick={() => {
+                       setView('activities');
+                       setLessonView('');
+                       }}>
                       <img src={nextImg} alt="Next" className="next-img" />
                     </button>
                     <button className="next-btn" onClick={() => setLessonView('')}>
@@ -198,6 +204,9 @@ export default function SectionView() {
               {activityView === '' ? (
                 <>
                   <p>Choose an activity from the menu.</p>
+                  <div className="klaus-activity-container">
+                    <img src={klaus2} className="klaus-img" alt="Klaus Activity mascot" />
+                   </div>
                   <div className="next-btn-wrapper">
                     <button className="next-btn-actv" onClick={() => setActivityView('activity1')}>
                       <img src={nextImg} alt="Next" className="next-img" />

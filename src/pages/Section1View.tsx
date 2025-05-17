@@ -7,6 +7,69 @@ import nextImg from '../assets/next.png';
 import nextOp from '../assets/nextop.png';
 import Badgpen from '../assets/Ba.png';
 import Procs from '../assets/procs.png';
+import LessonBoard from './LessonBoard';
+
+// Boards para el LessonBoard
+const lessonBoards = [
+  {
+    title: "LESSON 1",
+    content: (
+      <>
+        <p>
+          <span role="img" aria-label="german-flag">🇩🇪</span> <strong>DEUTSCH:</strong><br />
+          Hallo! Ich heiße Lina und ich komme aus Kolumbien. Ich bin Lehrerin von Beruf. Und du?
+        </p>
+        <p>
+          <span role="img" aria-label="british-flag">🇬🇧</span> <strong>Explanation in English:</strong><br />
+          “Hello! My name is Lina and I come from Colombia. I am a teacher by profession. And you?”
+        </p>
+        <div style={{ textAlign: 'left', margin: '1.2rem auto', maxWidth: '580px' }}>
+          <strong>This short paragraph introduces:</strong>
+          <ul>
+            <li><span style={{ color: '#ea2626', fontWeight: 700 }}>Name →</span> Ich heiße…</li>
+            <li><span style={{ color: '#ea2626', fontWeight: 700 }}>Country of origin →</span> Ich komme aus…</li>
+            <li><span style={{ color: '#ea2626', fontWeight: 700 }}>Occupation →</span> Ich bin … von Beruf</li>
+            <li><b>And invites the other person to respond with Und du? ("And you?")</b></li>
+          </ul>
+        </div>
+      </>
+    )
+  },
+  {
+    title: "LESSON 1 — Example",
+    content: (
+      <div>
+        <b>Ejemplo de presentación:</b>
+        <br />
+        <span style={{ color: "#3b82f6" }}>Hallo! Ich heiße Marco und ich bin Ingenieur aus Deutschland.</span>
+        <br /><br />
+        <b>Traducción:</b>
+        <br />
+        <span>Hello! My name is Marco and I am an engineer from Germany.</span>
+      </div>
+    )
+  },
+  {
+    title: "LESSON 1 — Tip",
+    content: (
+      <div>
+        <b>Tip:</b> <span style={{ color: "#f97316" }}>“Ich bin … von Beruf”</span> se usa para hablar de profesión, no solo de trabajo temporal.
+        <br /><br />
+        <span>¿Y tú? — <b>Und du?</b></span>
+      </div>
+    )
+  },
+  {
+    title: "LESSON 1 — Practice",
+    content: (
+      <div>
+        <b>¡Practica!</b>
+        <br />
+        <span>Presenta a un compañero/a en alemán usando las frases anteriores.</span>
+      </div>
+    )
+  }
+];
 
 export default function SectionView() {
   const navigate = useNavigate();
@@ -43,7 +106,10 @@ export default function SectionView() {
           </button>
           {showContent && (
             <div className="dropdown-list">
-              <span className="dropdown-item" onClick={() => setLessonView('lesson1')}>
+              <span
+                className="dropdown-item"
+                onClick={() => setLessonView('lesson1')}
+              >
                 • Lesson 1
               </span>
             </div>
@@ -94,23 +160,23 @@ export default function SectionView() {
         <div className="section-main">
           {view === 'content' && (
             <div className="section-content">
+              {/* Si lessonView está vacío, se muestra el pingüino y el botón de next */}
               {lessonView === '' ? (
                 <>
                   <div className="klaus-balloon-container">
                     <img src={klaus} className="klaus-img" alt="Klaus mascot" />
                   </div>
-                  <div className="next-btn-wrapper-lesson">
+                  <div className="next-btn-wrapper-intro">
                     <button className="next-btn" onClick={() => setLessonView('lesson1')}>
                       <img src={nextImg} alt="Next" className="next-img" />
                     </button>
                   </div>
                 </>
               ) : (
-                <>
-                  <div className="klaus-balloon-container">
-                    <p><strong>Lesson 1 goes here…</strong></p>
-                  </div>
-                  <div className="next-btn-wrapper">
+                // LessonBoard aquí
+                <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <LessonBoard boards={lessonBoards} />
+                  <div className="next-btn-wrapper" style={{ marginTop: 30 }}>
                     <button className="next-btn" onClick={() => {
                       setView('activities');
                       setLessonView('');
@@ -121,11 +187,12 @@ export default function SectionView() {
                       <img src={nextOp} alt="Back" className="next-img" />
                     </button>
                   </div>
-                </>
+                </div>
               )}
             </div>
           )}
 
+          {/* Las otras vistas siguen igual */}
           {view === 'activities' && (
             <div className="section-content">
               {activityView === '' ? (

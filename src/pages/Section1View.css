@@ -270,3 +270,18 @@ html, body {
     align-items: center;
   }
 }
+.lesson-board-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.7rem;
+}
+.next-btn-wrapper-intro {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* Centrado horizontal */
+  margin-top: 0.5rem;        /* Más cerca del pingüino */
+  margin-bottom: 0;          /* Sin margen inferior extra */
+  margin-left: 7rem;
+}
+

@@ -3,6 +3,7 @@ import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import Home from './pages/Home';
 import A1Sections from './pages/A1sections';
+import Section1View from './pages/Section1View'; // 
 function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App() {
         <Route path="/sections/a1" element={<A1Sections />} />
         <Route path="/practice" element={<div>Coming soon...</div>} />
         <Route path="/progress" element={<div>Coming soon...</div>} />
+        <Route path="/sections/a1/section-1" element={<Section1View />} />
       </Routes>
     </Router>
   );

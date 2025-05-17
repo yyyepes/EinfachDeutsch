@@ -4,8 +4,6 @@ body {
 
 html, body {
   overflow-x: hidden;
-  height: 100%;
-  overflow-y: auto;
 }
 
 .section-view-container {
@@ -57,6 +55,8 @@ html, body {
   font-size: 1.3rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(59,130,246,0.05);
+  width: max-content;
+  margin-right: 21rem;  
 }
 
 .section-sidebar {
@@ -216,84 +216,7 @@ html, body {
   color: white;
 }
 
-/* Responsive grid container for A1 */
-.a1-container {
-  padding: 2rem;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.a1-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.back-button {
-  background-color: #38bdf8;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 2rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
-  cursor: pointer;
-}
-
-.a1-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.sections-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.section-box {
-  background-color: #7dd3fc;
-  color: white;
-  border-radius: 1.5rem;
-  padding: 3.5rem 1rem;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.3rem;
-  transition: transform 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.section-box:hover {
-  transform: scale(1.03);
-}
-
-.lock {
-  margin-top: 0.5rem;
-  font-size: 1.4rem;
-}
-
-.locked {
-  background-color: #38bdf8;
-}
-
-.section-box:nth-child(8) {
-  background-color: #1e3a8a;
-}
-
-.lock-icon {
-  width: 100px;
-  height: 100px;
-  margin-top: 1rem;
-  object-fit: contain;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .section-view-container {
     flex-direction: column;
     align-items: center;
@@ -317,6 +240,7 @@ html, body {
     margin: 1rem auto;
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
+    
   }
 
   .klaus-img {
@@ -344,29 +268,5 @@ html, body {
   .dropdown-list {
     padding-left: 0;
     align-items: center;
-  }
-
-  .a1-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .a1-title {
-    font-size: 1.5rem;
-  }
-
-  .sections-grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.2rem;
-  }
-
-  .section-box {
-    padding: 2.5rem 1rem;
-    font-size: 1.1rem;
-  }
-
-  .lock-icon {
-    width: 60px;
-    height: 60px;
   }
 }

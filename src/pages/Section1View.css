@@ -316,3 +316,38 @@ html, body {
 }
 
 
+.mark-as-done-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 16px #10b98133;
+  cursor: pointer;
+  margin: 22px auto 10px auto;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.02em;
+  outline: none;
+}
+
+.mark-as-done-btn.done {
+  background: #38bdf8;
+  color: #00375e;
+  box-shadow: 0 4px 16px #38bdf833;
+}
+
+.mark-as-done-btn:not(.done):hover {
+  background: #059669;
+}
+
+.mark-as-done-btn.done:hover {
+  background: #2563eb;
+  color: #fff;
+}
+

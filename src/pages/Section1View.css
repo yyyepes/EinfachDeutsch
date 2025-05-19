@@ -135,6 +135,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.6rem;
+
 }
 
 .klaus-img {
@@ -244,7 +245,11 @@ html, body {
   }
 
   .klaus-img {
-    width: 220px;
+    width: 100%;
+    max-width: 500px; /* o el tamaño máximo que desees */
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 
   .klaus-speech {

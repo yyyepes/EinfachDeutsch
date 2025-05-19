@@ -5,6 +5,10 @@ import klausScore from "../assets/KlausSc.png";
 import MarkAsDoneButton from "./MarkAsDoneButton";
 import { useUser } from "../Context/UserContext";
 import './Quiz.css';
+import BadgeUnlocked from "./BadgeUnlocked1"; // Ajusta el path si es necesario
+
+
+
 
 function getRandomQuestions(arr: any[], n: number) {
   const shuffled = [...arr].sort(() => 0.5 - Math.random());
@@ -23,7 +27,8 @@ export default function Quiz() {
   const [correct, setCorrect] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [markDone, setMarkDone] = useState(false);
-
+  const [showBadge, setShowBadge] = useState(false);
+  const [badgeDone, setBadgeDone] = useState(false);
   // Reinicia quiz
   function restartQuiz() {
     setRandomQuestions(getRandomQuestions(quizQuestions, 7));
@@ -101,9 +106,17 @@ export default function Quiz() {
       setStep("score");
     }
   }
-
+ // render showBadge 
+ if (showBadge) {
+    return (
+      <BadgeUnlocked
+        done={badgeDone}
+        onFinish={() => setBadgeDone((d) => !d)} // Cambia a verde y texto al hacer click
+      />
+    );
+  }
   // Score view
-  // ...código anterior
+ 
 
 // Score view
 if (step === "score") {
@@ -132,9 +145,10 @@ if (step === "score") {
               onClick={() => setMarkDone((d) => !d)}
               label="Mark quiz as done"
              />
-            <button className="quiz-badge-btn" onClick={() => alert("Congrats! You got the badge.")}>
-              GET BADGE
-            </button>
+          <button className="quiz-badge-btn" onClick={() => setShowBadge(true)}>
+          GET BADGE
+          </button>
+
           </div>
         ) : (
           <button className="quiz-tryagain-btn" onClick={restartQuiz}>
@@ -144,6 +158,7 @@ if (step === "score") {
       </div>
     );
   }
+ 
   
 
   // Renderiza el quiz pregunta a pregunta

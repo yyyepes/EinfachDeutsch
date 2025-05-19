@@ -6,7 +6,7 @@
   }
   
   .flashcard-card {
-    width: 445px;
+    width: 490px;
     max-width: 98vw;   /* <-- asegura que nunca sobrepase el viewport */
     min-height: 330px;
     background: #378bfa;
@@ -116,6 +116,7 @@
     font-size: 1rem;
     opacity: 0.85;
     text-align: center;
+    margin-bottom: -1rem;
   }
   
   .flashcard-finished {
@@ -189,5 +190,3 @@
     background: #e0eaff;
     color: #2563eb;
   }
-  
-  

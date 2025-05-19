@@ -11,7 +11,7 @@ import LessonBoard from './LessonBoard';
 import klaus2 from '../assets/Klaus04.png';
 import ClozeTest from './Clozetest.tsx';
 import Flashcards from './Flashcards.tsx';
-
+import Questions from './Questions.tsx';
 
 // Boards para el LessonBoard
 const lessonBoards = [
@@ -420,7 +420,7 @@ export default function SectionView() {
             <div className="section-content">
               {activityView === '' ? (
                 <>
-                  <p>Choose an activity from the menu.</p>
+                  <p>Choose a learning activity from the dropdown menu on the left.</p>
                   <div className="klaus-activity-container">
                     <img src={klaus2} className="klaus-img" alt="Klaus Activity mascot" />
                   </div>
@@ -449,9 +449,16 @@ export default function SectionView() {
                   {/* Insert ClozeTest only in Activity 2 */}
                   {activityView === 'activity2' && (
                     <div style={{ margin: '30px 0' }}>
+                      
                       <ClozeTest />
                     </div>
                   )}
+
+                  {activityView === 'activity3' && (
+                  <div style={{ margin: '30px 0' }}>
+                    <Questions />   {/* <--- aquí llamas a tu componente */}
+                    </div>
+                   )}
 
                   <div className="next-btn-wrapper">
                     <button className="next-btn-actv" onClick={() => {

@@ -4,8 +4,39 @@ import type { FlashcardWord } from '../data/VocabularyData';
 import './Flashcards.css';
 
 function getInitialQueue(words: FlashcardWord[]) {
-  // ¡Puedes filtrar por categoría aquí si lo deseas!
   return [...words];
+}
+
+// --- FUNCIÓN PARA OBTENER EMOJI ---
+function getEmoji(word: string, category: string) {
+  if (category === "GREETINGS") {
+    if (word === "Hallo") return "👋";
+    if (word === "Tschüss") return "👋";
+    if (word === "Guten Morgen") return "🌅";
+    if (word === "Guten Tag") return "☀️";
+    if (word === "Guten Abend") return "🌙";
+  }
+  if (category === "NAME") {
+    return "📝";
+  }
+  if (category === "COUNTRY") {
+    if (word === "Deutschland") return "🇩🇪";
+    if (word === "Spanien") return "🇪🇸";
+    if (word === "USA") return "🇺🇸";
+    if (word === "England") return "🏴󠁧󠁢󠁥󠁮󠁧󠁿";
+    if (word === "Frankreich") return "🇫🇷";
+    if (word === "Italien") return "🇮🇹";
+    return "🌍";
+  }
+  if (category === "OCCUPATION") {
+    if (word.includes("Lehrer")) return "👩‍🏫";
+    if (word.includes("Arzt") || word.includes("Ärztin")) return "🩺";
+    if (word.includes("Ingenieur")) return "🛠️";
+    if (word.includes("Student")) return "🎓";
+    return "💼";
+  }
+  if (category === "PHRASES") return "💬";
+  return "";
 }
 
 export default function Flashcards() {
@@ -71,7 +102,7 @@ export default function Flashcards() {
       <div className="flashcard-container">
         <div className="flashcard-card flashcard-finished">
           <div className="flashcard-category">¡Well Done!</div>
-          <div className="flashcard-word">You've completed all the flashcards! 🎉 Keep up the good work!</div>
+          <div className="flashcard-word">You've completed all the flashcards! 🎉<br/> Keep up the good work!</div>
           <button className="flashcard-btn restart" onClick={handleRestart}>
             Restart
           </button>
@@ -84,10 +115,10 @@ export default function Flashcards() {
 
   return (
     <div className="flashcard-container">
-         {/* INSTRUCCIÓN ARRIBA */}
-           <div className="flashcard-instructions">
-             Press 'Know' if you know it, or 'Study Again' to review.
-           </div>
+      {/* INSTRUCCIÓN ARRIBA */}
+      <div className="flashcard-instructions">
+        Press 'Know' if you know it, or 'Study Again' to review.
+      </div>
       <div
         className={`flashcard-card ${animDirection ? 'slide-' + animDirection : ''}`}
         ref={cardRef}
@@ -99,7 +130,14 @@ export default function Flashcards() {
         <div className="flashcard-category">
           {flashcard.category.charAt(0) + flashcard.category.slice(1).toLowerCase()}
         </div>
-        <div className="flashcard-word">{flashcard.german}</div>
+        <div className="flashcard-word">
+          {getEmoji(flashcard.german, flashcard.category) && (
+            <span style={{ fontSize: "2rem", verticalAlign: "middle", marginRight: "0.28em" }}>
+              {getEmoji(flashcard.german, flashcard.category)}
+            </span>
+          )}
+          {flashcard.german}
+        </div>
         <div className="flashcard-translation">{flashcard.translation}</div>
         <div className="flashcard-use">{flashcard.use}</div>
       </div>

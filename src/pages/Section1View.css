@@ -306,4 +306,8 @@ html, body {
   align-items: center;
   margin: 1.2rem 0 0.6rem 0;
 }
+.section-content > p {
+  margin-bottom: -2rem; /* o incluso 0 si quieres que estén muy pegados */
+}
+
 

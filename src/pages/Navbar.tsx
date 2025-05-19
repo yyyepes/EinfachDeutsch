@@ -1,12 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import { useState } from 'react';
 import { useUser } from '../Context/UserContext';
 
 export default function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // 👈 estado hamburguesa
-  const { user } = useUser();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { user, logout } = useUser(); // 👈 incluye logout
+  const navigate = useNavigate();
+
+  // Maneja el cierre de sesión
+  const handleSignOut = () => {
+    logout();
+    navigate('/'); // Te lleva al login (raíz "/")
+  };
 
   return (
     <nav className="navbar">
@@ -15,7 +22,6 @@ export default function Navbar() {
         <span><span className="white">EINFACH</span><span className="red">DEUTSCH</span></span>
       </div>
 
-      {/* Botón hamburguesa solo en móvil */}
       <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
@@ -30,7 +36,8 @@ export default function Navbar() {
             <div className="dropdown">
               <button>Profile</button>
               <button>Language</button>
-              <button>Sign out</button>
+              <button onClick={handleSignOut}>Sign out</button>
+              {/* 👆 LLAMA handleSignOut */}
             </div>
           )}
         </div>

@@ -16,7 +16,7 @@ export default function LogIn() {
     e.preventDefault();
 
     // 🚀 Simulación de login (en futuro, aquí irá tu llamada al backend)
-    setUser({ name: 'Rosibell', email: form.email });
+    setUser({ name: 'Vanessa', email: form.email });
 
     // Redirige al home
     navigate('/home');

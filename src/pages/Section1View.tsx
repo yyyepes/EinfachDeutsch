@@ -12,6 +12,8 @@ import klaus2 from '../assets/Klaus04.png';
 import ClozeTest from './Clozetest.tsx';
 import Flashcards from './Flashcards.tsx';
 import Questions from './Questions.tsx';
+import MarkAsDoneButton from './MarkAsDoneButton';
+import Quiz from './Quiz.tsx'; // Ajusta la ruta si es diferente
 
 // Boards para el LessonBoard
 const lessonBoards = [
@@ -67,7 +69,6 @@ const lessonBoards = [
         </span>
       </div>
     ),
-    
   },
   {
     title: "Practice",
@@ -123,173 +124,172 @@ const lessonBoards = [
     ),
   },
   {
-      title: "Countries & Nationalities 🌍",
-      content: (
-        <>
-          <p>
-            <span role="img" aria-label="german-flag">
-              🇩🇪
-            </span>{" "}
-            <strong>DEUTSCH:</strong>
-            <br />
-            <span style={{ fontSize: "1.1rem" }}>Länder (Countries) und Nationalitäten (Nationalities):</span>
-          </p>
-  
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "15px", margin: "20px 0" }}>
-            <div style={{ textAlign: "center", width: "120px" }}>
-              <span style={{ fontSize: "2rem" }}>🇩🇪</span>
-              <p>
-                <strong>Deutschland</strong>
-              </p>
-              <p>deutsch</p>
-            </div>
-            <div style={{ textAlign: "center", width: "120px" }}>
-              <span style={{ fontSize: "2rem" }}>🇪🇸</span>
-              <p>
-                <strong>Spanien</strong>
-              </p>
-              <p>spanisch</p>
-            </div>
-            <div style={{ textAlign: "center", width: "120px" }}>
-              <span style={{ fontSize: "2rem" }}>🇺🇸</span>
-              <p>
-                <strong>USA</strong>
-              </p>
-              <p>amerikanisch</p>
-            </div>
-            <div style={{ textAlign: "center", width: "120px" }}>
-              <span style={{ fontSize: "2rem" }}>🇲🇽</span>
-              <p>
-                <strong>Mexiko</strong>
-              </p>
-              <p>mexikanisch</p>
-            </div>
-            <div style={{ textAlign: "center", width: "120px" }}>
-              <span style={{ fontSize: "2rem" }}>🇨🇴</span>
-              <p>
-                <strong>Kolumbien</strong>
-              </p>
-              <p>kolumbianisch</p>
-            </div>
-          </div>
-  
-          <div style={{ backgroundColor: "#f0fff4", padding: "15px", borderRadius: "8px", margin: "15px 0" }}>
+    title: "Countries & Nationalities 🌍",
+    content: (
+      <>
+        <p>
+          <span role="img" aria-label="german-flag">
+            🇩🇪
+          </span>{" "}
+          <strong>DEUTSCH:</strong>
+          <br />
+          <span style={{ fontSize: "1.1rem" }}>Länder (Countries) und Nationalitäten (Nationalities):</span>
+        </p>
+
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "15px", margin: "20px 0" }}>
+          <div style={{ textAlign: "center", width: "120px" }}>
+            <span style={{ fontSize: "2rem" }}>🇩🇪</span>
             <p>
-              <span role="img" aria-label="notebook">
-                📝
-              </span>{" "}
-              <strong>Structure:</strong>
+              <strong>Deutschland</strong>
             </p>
-            <p>"Ich komme aus [Country]" = "I come from [Country]"</p>
-            <p>"Ich bin [Nationality]" = "I am [Nationality]"</p>
+            <p>deutsch</p>
           </div>
-  
-          <div style={{ textAlign: "center", margin: "15px 0" }}>
-            <p style={{ fontSize: "1.2rem", color: "#3b82f6" }}>"Ich komme aus Mexiko. Ich bin Mexikaner."</p>
-            <p>(I come from Mexico. I am Mexican.)</p>
+          <div style={{ textAlign: "center", width: "120px" }}>
+            <span style={{ fontSize: "2rem" }}>🇪🇸</span>
+            <p>
+              <strong>Spanien</strong>
+            </p>
+            <p>spanisch</p>
           </div>
-        </>
-      ),
+          <div style={{ textAlign: "center", width: "120px" }}>
+            <span style={{ fontSize: "2rem" }}>🇺🇸</span>
+            <p>
+              <strong>USA</strong>
+            </p>
+            <p>amerikanisch</p>
+          </div>
+          <div style={{ textAlign: "center", width: "120px" }}>
+            <span style={{ fontSize: "2rem" }}>🇲🇽</span>
+            <p>
+              <strong>Mexiko</strong>
+            </p>
+            <p>mexikanisch</p>
+          </div>
+          <div style={{ textAlign: "center", width: "120px" }}>
+            <span style={{ fontSize: "2rem" }}>🇨🇴</span>
+            <p>
+              <strong>Kolumbien</strong>
+            </p>
+            <p>kolumbianisch</p>
+          </div>
+        </div>
+
+        <div style={{ backgroundColor: "#f0fff4", padding: "15px", borderRadius: "8px", margin: "15px 0" }}>
+          <p>
+            <span role="img" aria-label="notebook">
+              📝
+            </span>{" "}
+            <strong>Structure:</strong>
+          </p>
+          <p>"Ich komme aus [Country]" = "I come from [Country]"</p>
+          <p>"Ich bin [Nationality]" = "I am [Nationality]"</p>
+        </div>
+
+        <div style={{ textAlign: "center", margin: "15px 0" }}>
+          <p style={{ fontSize: "1.2rem", color: "#3b82f6" }}>"Ich komme aus Mexiko. Ich bin Mexikaner."</p>
+          <p>(I come from Mexico. I am Mexican.)</p>
+        </div>
+      </>
+    ),
   },
   {
-      title: "Professions 💼",
-      content: (
-        <>
+    title: "Professions 💼",
+    content: (
+      <>
+        <p>
+          <span role="img" aria-label="german-flag">
+            🇩🇪
+          </span>{" "}
+          <strong>DEUTSCH:</strong>
+          <br />
+          <span style={{ fontSize: "1.1rem" }}>Berufe (Professions):</span>
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+            gap: "15px",
+            margin: "20px 0",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👩‍🏫</span>
+            <div>
+              <p>
+                <strong>Lehrer/in</strong>
+              </p>
+              <p>Teacher</p>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👨‍⚕️</span>
+            <div>
+              <p>
+                <strong>Arzt/Ärztin</strong>
+              </p>
+              <p>Doctor</p>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👩‍💼</span>
+            <div>
+              <p>
+                <strong>Anwalt/Anwältin</strong>
+              </p>
+              <p>Lawyer</p>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👨‍💻</span>
+            <div>
+              <p>
+                <strong>Programmierer/in</strong>
+              </p>
+              <p>Programmer</p>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👩‍🍳</span>
+            <div>
+              <p>
+                <strong>Koch/Köchin</strong>
+              </p>
+              <p>CCook</p>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👨‍🔧</span>
+            <div>
+              <p>
+                <strong>Ingenieur/in</strong>
+              </p>
+              <p>Engineer</p>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ backgroundColor: "#fff0f6", padding: "15px", borderRadius: "8px", margin: "15px 0" }}>
           <p>
-            <span role="img" aria-label="german-flag">
-              🇩🇪
+            <span role="img" aria-label="info">
+              ℹ️
             </span>{" "}
-            <strong>DEUTSCH:</strong>
-            <br />
-            <span style={{ fontSize: "1.1rem" }}>Berufe (Professions):</span>
+            <strong>Grammar note:</strong>
           </p>
-  
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
-              gap: "15px",
-              margin: "20px 0",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👩‍🏫</span>
-              <div>
-                <p>
-                  <strong>Lehrer/in</strong>
-                </p>
-                <p>Teacher</p>
-              </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👨‍⚕️</span>
-              <div>
-                <p>
-                  <strong>Arzt/Ärztin</strong>
-                </p>
-                <p>Doctor</p>
-              </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👩‍💼</span>
-              <div>
-                <p>
-                  <strong>Anwalt/Anwältin</strong>
-                </p>
-                <p>Lawyer</p>
-              </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👨‍💻</span>
-              <div>
-                <p>
-                  <strong>Programmierer/in</strong>
-                </p>
-                <p>Programmer</p>
-              </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👩‍🍳</span>
-              <div>
-                <p>
-                  <strong>Koch/Köchin</strong>
-                </p>
-                <p>CCook</p>
-              </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ fontSize: "1.5rem", marginRight: "10px" }}>👨‍🔧</span>
-              <div>
-                <p>
-                  <strong>Ingenieur/in</strong>
-                </p>
-                <p>Engineer</p>
-              </div>
-            </div>
-          </div>
-  
-          <div style={{ backgroundColor: "#fff0f6", padding: "15px", borderRadius: "8px", margin: "15px 0" }}>
-            <p>
-              <span role="img" aria-label="info">
-                ℹ️
-              </span>{" "}
-              <strong>Grammar note:</strong>
-            </p>
-            <p>
-              In German, many professions have masculine and feminine forms. <br />
-              The feminine form is usually formed by adding "-in" at the end.
-            </p>
-            <p>Ejemplo: Lehrer , Lehrerin → (Teacher)</p>
-          </div>
-  
-          <div style={{ textAlign: "center", margin: "15px 0" }}>
-            <p style={{ fontSize: "1.2rem", color: "#3b82f6" }}>"Ich bin Ingenieur von Beruf."</p>
-            <p>(I am an engineer by profession.)</p>
-          </div>
-        </>
-      ),
+          <p>
+            In German, many professions have masculine and feminine forms. <br />
+            The feminine form is usually formed by adding "-in" at the end.
+          </p>
+          <p>Ejemplo: Lehrer , Lehrerin → (Teacher)</p>
+        </div>
+
+        <div style={{ textAlign: "center", margin: "15px 0" }}>
+          <p style={{ fontSize: "1.2rem", color: "#3b82f6" }}>"Ich bin Ingenieur von Beruf."</p>
+          <p>(I am an engineer by profession.)</p>
+        </div>
+      </>
+    ),
   }
-  
 ];
 
 export default function SectionView() {
@@ -299,6 +299,18 @@ export default function SectionView() {
   const [showActivities, setShowActivities] = useState(false);
   const [lessonView, setLessonView] = useState('');
   const [activityView, setActivityView] = useState('');
+
+  // Estado para marcar progreso
+  const [progress, setProgress] = useState({
+    lesson1: false,
+    activity1: false,
+    activity2: false,
+    activity3: false,
+  });
+
+  function toggleProgress(key: keyof typeof progress) {
+    setProgress(prev => ({ ...prev, [key]: !prev[key] }));
+  }
 
   return (
     <div>
@@ -395,10 +407,11 @@ export default function SectionView() {
               ) : (
                 <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <LessonBoard boards={lessonBoards} />
-                  <button className="finish-lesson-btn" onClick={() => { alert('Lesson finished!'); }}
-                    style={{ marginTop: 20, marginBottom: 10 }}>
-                    Finish Lesson
-                  </button>
+                  <MarkAsDoneButton
+                    done={progress.lesson1}
+                    onClick={() => toggleProgress('lesson1')}
+                    label="Finish Lessons"
+                  />
                   <div className="next-btn-wrapper" style={{ marginTop: 30 }}>
                     <button className="next-btn" onClick={() => {
                       setView('activities');
@@ -442,23 +455,36 @@ export default function SectionView() {
 
                   {activityView === 'activity1' && (
                     <div style={{ margin: '30px 0' }}>
-                    <Flashcards />
+                      <Flashcards />
+                      <MarkAsDoneButton
+                        done={progress.activity1}
+                        onClick={() => toggleProgress('activity1')}
+                        label="Mark as done"
+                      />
                     </div>
-                 )}
-                   
-                  {/* Insert ClozeTest only in Activity 2 */}
+                  )}
+
                   {activityView === 'activity2' && (
                     <div style={{ margin: '30px 0' }}>
-                      
                       <ClozeTest />
+                      <MarkAsDoneButton
+                        done={progress.activity2}
+                        onClick={() => toggleProgress('activity2')}
+                        label="Mark as done"
+                      />
                     </div>
                   )}
 
                   {activityView === 'activity3' && (
-                  <div style={{ margin: '30px 0' }}>
-                    <Questions />   {/* <--- aquí llamas a tu componente */}
+                    <div style={{ margin: '30px 0' }}>
+                      <Questions />
+                      <MarkAsDoneButton
+                        done={progress.activity3}
+                        onClick={() => toggleProgress('activity3')}
+                        label="Mark as done"
+                      />
                     </div>
-                   )}
+                  )}
 
                   <div className="next-btn-wrapper">
                     <button className="next-btn-actv" onClick={() => {
@@ -492,7 +518,9 @@ export default function SectionView() {
 
           {view === 'quiz' && (
             <div className="section-content">
-              <p>Quiz goes here…</p>
+              <p></p>
+               {/* Aquí va el componente del quiz */}
+                 <Quiz />
               <div className="next-btn-wrapper-quiz">
                 <button className="next-btn" onClick={() => {
                   setView('activities');

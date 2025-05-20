@@ -71,14 +71,14 @@ export const quizQuestions = [
       answer: 1
     },
     {
-      question: "❓ Was antwortest du auf: 'Und du?' (How do you answer: 'Und du?' / 'And you?')",
+      question: "❓ Wie antwortest du auf: 'Woher kommst du?' (How do you answer: 'Where are you from?')",
       options: [
-        "Ich heiße Pablo.",
-        "Guten Tag!",
-        "Ich bin Lehrer.",
-        "Ich bin aus Spanien."
+      "Ich heiße Pablo.",
+      "Guten Tag!",
+      "Ich bin Lehrer.",
+      "Ich bin aus Spanien."
       ],
-      answer: 3
+       answer: 3
     },
     {
       question: "🇪🇸 Was bedeutet 'Ich spreche Spanisch'? (What does 'Ich spreche Spanisch' mean?)",
@@ -139,6 +139,70 @@ export const quizQuestions = [
         "Ich bin Arzt."
       ],
       answer: 2
+    },
+    {
+      question: "🇩🇪 Was antwortest du auf: 'Woher kommst du?' (How do you answer: 'Where are you from?')",
+      options: [
+        "Ich heiße Anna.",
+        "Ich bin Student.",
+        "Ich komme aus Deutschland.",
+        "Ich wohne in Spanien.",
+      ],
+      answer: 2
+    },
+    {
+      question: "🧑‍💻 Wie sagt man 'I am a programmer' auf Deutsch? (How do you say 'I am a programmer' in German?)",
+      options: [
+        "Ich bin Programmierer.",         // I am a programmer.
+        "Ich bin Student.",               // I am a student.
+        "Ich komme aus Programmierer.",   // I come from programmer.
+        "Ich heiße Programmierer.",       // My name is programmer.
+      ],
+      answer: 0
     }
+    ,
+    {
+      question: "❓ Wie sagt man 'Goodbye' auf Deutsch? (How do you say 'Goodbye' in German?)",
+      options: [
+        "Hallo",         // Hello
+        "Guten Morgen",  // Good morning
+        "Tschüss",       // Goodbye / Bye
+        "Danke",         // Thank you
+      ],
+      answer: 2
+    }
+    ,
+    {
+      question: "🇩🇪 Was bedeutet 'Ich bin Ärztin von Beruf'? (What does 'Ich bin Ärztin von Beruf' mean?)",
+      options: [
+        "I am a student.",
+        "I am a doctor by profession.",
+        "I come from Berlin.",
+        "I live in Munich.",
+      ],
+      answer: 1
+    }
+    ,
+    {
+      question: "🇩🇪 Was antwortest du auf: 'Was bist du von Beruf?' (What do you answer to 'What is your profession?')",
+      options: [
+        "Ich heiße Maria.",
+        "Ich komme aus Mexiko.",
+        "Ich bin Lehrerin von Beruf.",
+        "Ich wohne in Madrid.",
+      ],
+      answer: 2
+    },
+    {
+      question: "🇩🇪 Wie sagt man 'Nice to meet you' auf Deutsch? (How do you say 'Nice to meet you' in German?)",
+      options: [
+        "Wie geht's?",   // How are you?
+        "Freut mich",    // Nice to meet you
+        "Tschüss",       // Goodbye / Bye
+        "Guten Tag",     // Good day
+      ],
+      answer: 1
+    }
+    
   ];
   

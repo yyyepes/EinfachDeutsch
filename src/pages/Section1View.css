@@ -139,7 +139,7 @@ html, body {
 }
 
 .klaus-img {
-  width: 350px;
+  width: 360px !important;
   height: auto;
   margin-bottom: 0.6rem;
 }

@@ -50,7 +50,8 @@ export default function Quiz({ quizDone, setQuizDone, sectionDone, setSectionDon
             <div>
               <div style={{ textAlign: "center" }}>
                 <span style={{
-                  color: "#fff700", background: "#1769aa", borderRadius: 8, padding: "2px 8px", marginRight: 6
+                 color: "#ffffff", background: "#1769aa"
+                 , borderRadius: 8, padding: "2px 8px", marginRight: 6
                 }}>
                   ⭐ INSTRUCTIONS
                 </span>

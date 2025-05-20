@@ -6,7 +6,7 @@
   }
   
   .klaus-intro-img {
-    width: 350px !important;    /* Usa !important para forzar el tamaño */
+    width: 360px !important;    /* Usa !important para forzar el tamaño */
     height: auto !important;
     max-width: none !important;
     min-width: 0 !important;

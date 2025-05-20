@@ -28,3 +28,4 @@ export default function BadgeUnlocked({ done, onFinish }: BadgeUnlockedProps) {
     </div>
   );
 }
+

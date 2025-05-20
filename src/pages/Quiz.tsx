@@ -3,20 +3,22 @@ import { quizQuestions } from "../data/quiz1";
 import klausIntro from "../assets/KlausIntro.png";
 import klausScore from "../assets/KlausSc.png";
 import MarkAsDoneButton from "./MarkAsDoneButton";
-import { useUser } from "../Context/UserContext";
 import './Quiz.css';
-import BadgeUnlocked from "./BadgeUnlocked1"; // Ajusta el path si es necesario
+import BadgeUnlocked from "./BadgeUnlocked1";
 
-
-
+type QuizProps = {
+  quizDone: boolean;
+  setQuizDone: () => void;
+  sectionDone: boolean;
+  setSectionDone: () => void;
+};
 
 function getRandomQuestions(arr: any[], n: number) {
   const shuffled = [...arr].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, n);
 }
 
-export default function Quiz() {
-  const { user } = useUser();
+export default function Quiz({ quizDone, setQuizDone, sectionDone, setSectionDone }: QuizProps) {
   const [step, setStep] = useState<"intro" | "quiz" | "score">("intro");
   const [randomQuestions, setRandomQuestions] = useState(() =>
     getRandomQuestions(quizQuestions, 7)
@@ -26,10 +28,8 @@ export default function Quiz() {
   const [checked, setChecked] = useState(false);
   const [correct, setCorrect] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
-  const [markDone, setMarkDone] = useState(false);
   const [showBadge, setShowBadge] = useState(false);
-  const [badgeDone, setBadgeDone] = useState(false);
-  // Reinicia quiz
+
   function restartQuiz() {
     setRandomQuestions(getRandomQuestions(quizQuestions, 7));
     setCurrent(0);
@@ -38,40 +38,39 @@ export default function Quiz() {
     setCorrect(0);
     setStep("intro");
     setAnswers([]);
-    setMarkDone(false);
+    // No resetees quizDone ni sectionDone porque son globales
   }
 
-  // Instrucciones + Klaus (Intro)
   if (step === "intro") {
     return (
       <div className="quiz-intro-container">
-       <div className="quiz-intro-row">
-       <img src={klausIntro} alt="Klaus" className="klaus-intro-img" />
-       <div className="quiz-cloud">
-      <div>
-           <div style={{ textAlign: "center" }}>
-              <span style={{
-                 color: "#fff700",background: "#1769aa",borderRadius: 8, padding: "2px 8px",  marginRight: 6 }}>
+        <div className="quiz-intro-row">
+          <img src={klausIntro} alt="Klaus" className="klaus-intro-img" />
+          <div className="quiz-cloud">
+            <div>
+              <div style={{ textAlign: "center" }}>
+                <span style={{
+                  color: "#fff700", background: "#1769aa", borderRadius: 8, padding: "2px 8px", marginRight: 6
+                }}>
                   ⭐ INSTRUCTIONS
                 </span>
-          </div>
-      <br /><br />
-      <b>
-        <span style={{ color: "#ffd94d" }}>Remember</span>
-        {", you'll need at least "}
-        <span style={{ color: "#19ffa3" }}>50%</span>
-        {" to move on to the next section."}
-      </b>
-      <br /><br />
-      <span style={{ color: "#d1f7ff" }}>Good luck — you're going to do <b style={{ color: "#fff" }}>great</b>! 🚀</span>
-      <br />
-      <span style={{ color: "#fff" }}>
-        If you don’t pass, you can always go back, review the lesson and activities,<br /> and <b style={{ color: "#19ffa3" }}> try again</b>.
-                 </span>
+              </div>
+              <br /><br />
+              <b>
+                <span style={{ color: "#ffd94d" }}>Remember</span>
+                {", you'll need at least "}
+                <span style={{ color: "#19ffa3" }}>50%</span>
+                {" to move on to the next section."}
+              </b>
+              <br /><br />
+              <span style={{ color: "#d1f7ff" }}>Good luck — you're going to do <b style={{ color: "#fff" }}>great</b>! 🚀</span>
+              <br />
+              <span style={{ color: "#fff" }}>
+                If you don’t pass, you can always go back, review the lesson and activities,<br /> and <b style={{ color: "#19ffa3" }}> try again</b>.
+              </span>
             </div>
           </div>
-         </div>
-
+        </div>
         <button className="start-quiz-btn" onClick={() => setStep("quiz")}>
           START QUIZ
         </button>
@@ -79,7 +78,6 @@ export default function Quiz() {
     );
   }
 
-  // Quiz principal
   const q = randomQuestions[current];
 
   function handleSelect(idx: number) {
@@ -106,23 +104,22 @@ export default function Quiz() {
       setStep("score");
     }
   }
- // render showBadge 
- if (showBadge) {
+
+  // Mostrar pantalla de badge (cuando get badge se presiona)
+  if (showBadge) {
     return (
       <BadgeUnlocked
-        done={badgeDone}
-        onFinish={() => setBadgeDone((d) => !d)} // Cambia a verde y texto al hacer click
+        done={sectionDone}
+        onFinish={setSectionDone}
       />
     );
   }
-  // Score view
- 
 
-// Score view
-if (step === "score") {
+  // Score view
+  if (step === "score") {
     const score = Math.round((correct / randomQuestions.length) * 100);
     const passed = score >= 50;
-  
+
     return (
       <div className="quiz-score-container">
         <div style={{ marginBottom: 20, textAlign: "center" }}>
@@ -141,14 +138,13 @@ if (step === "score") {
         {passed ? (
           <div className="quiz-score-btns">
             <MarkAsDoneButton
-              done={markDone}
-              onClick={() => setMarkDone((d) => !d)}
+              done={quizDone}
+              onClick={setQuizDone}
               label="Mark quiz as done"
-             />
-          <button className="quiz-badge-btn" onClick={() => setShowBadge(true)}>
-          GET BADGE
-          </button>
-
+            />
+            <button className="quiz-badge-btn" onClick={() => setShowBadge(true)}>
+              GET BADGE
+            </button>
           </div>
         ) : (
           <button className="quiz-tryagain-btn" onClick={restartQuiz}>
@@ -158,21 +154,18 @@ if (step === "score") {
       </div>
     );
   }
- 
-  
 
-  // Renderiza el quiz pregunta a pregunta
+  // Quiz pregunta a pregunta
   return (
     <div className="quiz-main-container">
       <div className="quiz-header">
         <span className="quiz-title">QUIZ</span>
       </div>
-      {/* INSTRUCCIÓN ARRIBA DE LA TARJETA */}
       <div className="quiz-question-card">
-      <span className="quiz-count">{current + 1}/7</span>
-      <div className="quiz-instructions">
-        Choose the only correct answer to the following questions.
-      </div>
+        <span className="quiz-count">{current + 1}/7</span>
+        <div className="quiz-instructions">
+          Choose the only correct answer to the following questions.
+        </div>
         <div className="quiz-question">
           <span style={{ color: "#e11d48", fontWeight: "bold", fontSize: "1.4rem" }}>❓</span>{" "}
           {q.question}
@@ -183,10 +176,10 @@ if (step === "score") {
               key={idx}
               className={
                 "quiz-option" +
-                     (selected === idx ? " selected" : "") +
-                     (checked && selected === idx && selected === q.answer ? " correct" : "") +
-                     (checked && selected === idx && selected !== q.answer ? " incorrect" : "")
-                     }
+                (selected === idx ? " selected" : "") +
+                (checked && selected === idx && selected === q.answer ? " correct" : "") +
+                (checked && selected === idx && selected !== q.answer ? " incorrect" : "")
+              }
               onClick={() => handleSelect(idx)}
               disabled={checked}
             >

@@ -91,4 +91,8 @@
       font-size: 1.3rem;
     }
   }
+  .badge-unlocked-container .mark-as-done-btn {
+    margin-top: -1rem !important;   /* Más pequeño que el valor por defecto */
+    margin-bottom: 0.7rem !important;
+  }
   

@@ -43,42 +43,96 @@ const lessonBoards = [
   },
   {
     title: "Example",
-    content: (
-      <div>
-        <b>Presentation example:</b>
+  content: (
+    <div>
+      <b>Presentation example:</b>
+      <br />
+      <span style={{ color: "#3b82f6" }}>
+        Hallo! Ich heiße Marco und ich bin Ingenieur aus Deutschland.
+      </span>
+      <br /><br />
+      <b>Translates:</b>
+      <br />
+      <span>Hello! My name is Marco and I am an engineer from Germany.</span>
+      <br /><br />
+      <b>More examples:</b>
+      <ul>
+        <li>
+          <span style={{ color: "#3b82f6" }}>
+            Ich heiße Julia. Ich bin Studentin. Ich komme aus Kolumbien.
+          </span>
+          <span> (My name is Julia. I am a student.<br></br> I come from Colombia.)</span>
+        </li>
+        <li>
+          <span style={{ color: "#3b82f6" }}>
+            Ich heiße Paul und ich bin Lehrer von Beruf.
+          </span>
+          <span> (My name is Paul and I am a teacher by profession.)</span>
+        </li>
+      </ul>
+      <div style={{ background: "#ffeaea", padding: "12px 16px", borderRadius: "8px", margin: "15px 0" }}>
+        <strong>Common mistake:</strong>
         <br />
-        <span style={{ color: "#3b82f6" }}>Hallo! Ich heiße Marco und ich bin Ingenieur aus Deutschland.</span>
-        <br />
-        <br />
-        <b>Traducción:</b>
-        <br />
-        <span>Hello! My name is Marco and I am an engineer from Germany.</span>
+        <span style={{ color: "#e53935" }}>
+          ❌ "Ich heiße Lehrer." <b>Incorrect!</b>
+          <br />
+          <b style={{ color: "#22c55e" }}>✔ Correct: "Ich bin Lehrer von Beruf."</b>
+        </span>
       </div>
-    ),
+    </div>
+  ),
   },
   {
     title: "Tip",
-    content: (
-      <div>
-        <b>Tip:</b> <span style={{ color: "#f97316" }}>"Ich bin … von Beruf"</span> It is used to talk about
-        professions, not just temporary work.
-        <br />
-        <br />
-        <span>
-          ¿And you? — <b>Und du?</b>
-        </span>
+  content: (
+    <div>
+      <b>Tip:</b>
+      <span style={{ color: "#f97316" }}>"Ich bin … von Beruf"</span> is used to talk about professions, not temporary jobs or being a student.
+      <br /><br />
+      <span>
+        For students, simply say: <b>Ich bin Student/Studentin.</b>
+      </span>
+      <br /><br />
+      <div style={{ background: "#e3fcec", padding: "10px 16px", borderRadius: "8px", margin: "10px 0" }}>
+        <b>Grammar note:</b> Remember to match the gender of the profession: Lehrer (m), Lehrerin (f).
       </div>
-    ),
+      <br />
+      <span>
+        <b>How to ask:</b> 
+        <br />
+        Was bist du von Beruf? (What is your profession?)<br />
+        Bist du Student/Studentin? (Are you a student?)
+      </span>
+      <br /><br />
+      <span>
+        ¿And you? — <b>Und du?</b>
+      </span>
+    </div>
+  ),
   },
   {
-    title: "Practice",
+    title: "Concepts",
     content: (
       <div>
-        <b>¡let's practice!</b>
-        <br />
-        <span>Introduce a partner in German using the sentences above.</span>
+        <div style={{ fontWeight: 700, marginBottom: 12 }}>Key Concepts:</div>
+        <div style={{ lineHeight: 1.7 }}>
+          <b>Ich heiße ...</b> — My name is ...<br />
+          <b>Ich komme aus ...</b> — I come from ... (country)<br />
+          <b>Ich bin ... von Beruf</b> — I am ... by profession<br />
+          <b>Ich bin Student/Studentin</b> — I am a student<br />
+          <b>Nationality:</b> Masculine <b>-er</b> / Feminine <b>-in</b><br />
+          &nbsp;&nbsp; <b>Spanier</b> (m), <b>Spanierin</b> (f)<br />
+          <b>Und du?</b> — And you?
+        </div>
+        <div style={{ background: "#e0f7fa", borderRadius: 8, padding: "8px 15px", marginTop: 16 }}>
+          <span role="img" aria-label="info">ℹ️</span>
+          <b style={{ marginLeft: 6 }}>Tip:</b> In German, the verb comes second:
+          <br />
+          <span style={{ color: "#246" }}>Ich heiße Anna. Ich komme aus Mexiko.</span>
+        </div>
       </div>
     ),
+    
   },
   {
     title: "Greetings 👋",
@@ -193,6 +247,71 @@ const lessonBoards = [
     ),
   },
   {
+    title: "Conversation Example: Countries & Nationalities",
+    content: (
+      <div>
+        <div style={{ fontWeight: 700, marginBottom: 14, fontSize: "1.18rem", textAlign: "center" }}>Sample Conversation</div>
+        <div style={{
+          background: "#f8fafc",
+          borderRadius: 14,
+          padding: "20px 30px",
+          margin: "0 auto 16px auto",
+          boxShadow: "0 2px 8px #e0e7ef22",
+          maxWidth: 600
+        }}>
+          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+            <div style={{ background: "#3b82f6", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Lina
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Hallo! Ich heiße Lina. Ich komme aus Kolumbien. Und du?</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                Hi! My name is Lina. I come from Colombia. And you?
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+            <div style={{ background: "#facc15", color: "#3a3a3a", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Marco
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Hallo Lina! Ich heiße Marco. Ich komme aus Spanien.</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                Hi Lina! My name is Marco. I come from Spain.
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+            <div style={{ background: "#3b82f6", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Lina
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Bist du Spanier?</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                Are you Spanish?
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ background: "#facc15", color: "#3a3a3a", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Marco
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Ja, ich bin Spanier.</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                Yes, I am Spanish.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: "center", fontSize: "1.04rem", marginTop: 10 }}>
+          <b>Notice:</b> See how each line matches a simple question or answer about nationality and country.
+        </div>
+      </div>
+    )
+  },
+
+  {
     title: "Professions 💼",
     content: (
       <>
@@ -289,7 +408,86 @@ const lessonBoards = [
         </div>
       </>
     ),
+  },
+  {
+    title: "Conversation Example: Professions",
+    content: (
+      <div>
+        <div style={{ fontWeight: 700, marginBottom: 14, fontSize: "1.18rem", textAlign: "center" }}>Sample Conversation</div>
+        <div style={{
+          background: "#f9f6ff",
+          borderRadius: 14,
+          padding: "20px 30px",
+          margin: "0 auto 16px auto",
+          boxShadow: "0 2px 8px #e0e7ef22",
+          maxWidth: 600
+        }}>
+          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+            <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Lina
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Was bist du von Beruf?</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                What is your profession?
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+            <div style={{ background: "#a3e635", color: "#25431b", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Marco
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Ich bin Ingenieur von Beruf. Und du?</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                I am an engineer by profession. And you?
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+            <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Lina
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Ich bin Lehrerin. 👩‍🏫</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                I am a teacher.
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ background: "#a3e635", color: "#25431b", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Marco
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Arbeitest du an einer Schule?</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                Do you work at a school?
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
+              Lina
+            </div>
+            <div style={{ marginLeft: 18, textAlign: "left" }}>
+              <div>Ja, ich arbeite in Bogotá.</div>
+              <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
+                Yes, I work in Bogotá.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: "center", fontSize: "1.04rem", marginTop: 10 }}>
+          <b>Notice:</b> This is how you ask and answer about professions in a conversation.
+        </div>
+      </div>
+    )
   }
+  
+
+
+  
 ];
 export default function SectionView() {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 // ClozeTest.tsx
 import { useState } from "react";
-import "./clozetest.css";
+import "./Clozetest.css"
 import { clozeTestSets } from '../data/clozeTestData';
 
 

@@ -507,6 +507,12 @@ export default function SectionView() {
     quizDone: false,
     sectionDone: false,
   });
+  const activityTitles: Record<string, string> = {
+    activity1: "Flashcards",
+    activity2: "Cloze test",
+    activity3: "Multiple choice",
+  };
+  
 
   // Funciones para marcar progreso
   function toggleProgress(key: keyof typeof progress) {
@@ -560,9 +566,9 @@ export default function SectionView() {
           </button>
           {showActivities && (
             <div className="dropdown-list">
-              <span className="dropdown-item" onClick={() => setActivityView('activity1')}>• Activity 1</span>
-              <span className="dropdown-item" onClick={() => setActivityView('activity2')}>• Activity 2</span>
-              <span className="dropdown-item" onClick={() => setActivityView('activity3')}>• Activity 3</span>
+              <span className="dropdown-item" onClick={() => setActivityView('activity1')}>• Activity 1: Flaschards</span>
+              <span className="dropdown-item" onClick={() => setActivityView('activity2')}>• Activity 2: Cloze test</span>
+              <span className="dropdown-item" onClick={() => setActivityView('activity3')}>• Activity 3: Multiple choice</span>
             </div>
           )}
           <button className="sidebar-btn quiz-btn" onClick={() => {
@@ -654,7 +660,7 @@ export default function SectionView() {
                   </>
                 ) : (
                   <>
-                    <p><strong>{activityView.replace('activity', 'Activity ')} goes here…</strong></p>
+                    <p><strong>{`Activity ${activityView.replace('activity', '')}: ${activityTitles[activityView]}`}</strong></p>
                     {activityView === 'activity1' && (
                       <div style={{ margin: '30px 0' }}>
                         <Flashcards />

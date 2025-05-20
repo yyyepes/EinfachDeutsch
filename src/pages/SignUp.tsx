@@ -5,7 +5,7 @@ import { useUser } from '../Context/UserContext';
 
 export default function SignUp() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
-  const { setUser } = useUser(); // opcional, si deseas loguear directamente tras registrarse
+  useUser(); // opcional, si deseas loguear directamente tras registrarse
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

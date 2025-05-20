@@ -5,7 +5,6 @@ import klaus from '../assets/Klaus002.png';
 import { useNavigate } from 'react-router-dom';
 import nextImg from '../assets/next.png';
 import nextOp from '../assets/nextop.png';
-import Badgpen from '../assets/Ba.png';
 import Procs from '../assets/procs.png';
 import LessonBoard from './LessonBoard';
 import klaus2 from '../assets/Klaus0004.png';

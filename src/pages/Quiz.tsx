@@ -27,7 +27,7 @@ export default function Quiz({ quizDone, setQuizDone, sectionDone, setSectionDon
   const [selected, setSelected] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
   const [correct, setCorrect] = useState(0);
-  const [answers, setAnswers] = useState<number[]>([]);
+  const [, setAnswers] = useState<number[]>([]);
   const [showBadge, setShowBadge] = useState(false);
 
   function restartQuiz() {

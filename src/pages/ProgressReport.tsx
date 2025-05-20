@@ -1,4 +1,3 @@
-import React from 'react';
 import './ProgressReport.css';
 
 type ProgressProps = {

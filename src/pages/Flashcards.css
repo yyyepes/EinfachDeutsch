@@ -6,9 +6,9 @@
   }
   
   .flashcard-card {
-    width: 490px;
+    width: 570px;
     max-width: 98vw;   /* <-- asegura que nunca sobrepase el viewport */
-    min-height: 330px;
+    min-height: 360px;
     background: #378bfa;
     border-radius: 2.2rem;
     margin-top: 2rem;
@@ -61,7 +61,27 @@
     font-weight: bold;
     margin: 1.2rem 0 0.2rem 0;
     letter-spacing: 1px;
+    display: flex;             /* <--- ¡ESTA LÍNEA! */
+    align-items: center;    
+    justify-content: center; 
+    gap: 1rem;              
+    flex-wrap: wrap;        
+    word-break: break-word;  /* Regrésalo a break-word */
+    width: 100%;            /* Opcional, pero recomendado */
+    text-align: center;
+    
   }
+  .german-word {
+    max-width: 70%;         /* O menos si la palabra sigue muy larga */
+    padding: 0 0.5em;       /* Margen lateral interno */
+    display: block;
+    margin: 0 auto;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+  
+  
   
   .flashcard-translation {
     font-size: 1.4rem;
@@ -191,12 +211,13 @@
     color: #2563eb;
   }
 
+
   /* tamaño cuando es imagen realmente */
   .flashcard-img { 
-    width: 79px;
-    height: 68px;
+    width: 88px;
+    height: 78px;
     object-fit: cover;
-    margin-right: -0.5rem;
+    margin-right: -1rem;
     vertical-align: middle;
     
   }

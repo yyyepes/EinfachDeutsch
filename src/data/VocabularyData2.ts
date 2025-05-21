@@ -133,8 +133,13 @@ export interface FlashcardWord {
       use: "Italien ist sehr schön. (Italy is very beautiful.)",
       category: "COUNTRY",
       imageUrl: "/images/italien.png",
+    },{
+      german: "Kolumbien",
+      translation: "Colombia",
+      use: "Kolumbien ist sehr schön. (Colombia is very beautiful.)",
+      category: "COUNTRY",
+      imageUrl: "/images/kolumbien.png",
     },
-  
     // Ocupaciones
     {
       german: "Ich bin... von Beruf",
@@ -177,6 +182,21 @@ export interface FlashcardWord {
       use: "Sie ist Studentin an der Universität. (She is a student at the university.)",
       category: "OCCUPATION",
       imageUrl: "/images/student.png",
+    },
+    {
+      german: "Programmierer / Programmiererin",
+      translation: "Programmer (m/f)",
+      use: "Er ist Programmierer bei einer Softwarefirma. (He is a programmer at a software company.)",
+      category: "OCCUPATION",
+      imageUrl: "/images/programmer.png",
+      
+    },
+    {
+      german: "Anwalt / Anwältin",
+      translation: "Lawyer (m/f)",
+      use: "Er ist Anwalt von Beruf. (He is a lawyer by profession.)",
+      category: "OCCUPATION",
+      imageUrl: "/images/anwalt.png",
     },
   
     // Frases útiles

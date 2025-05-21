@@ -190,3 +190,14 @@
     background: #e0eaff;
     color: #2563eb;
   }
+
+  /* tamaño cuando es imagen realmente */
+  .flashcard-img { 
+    width: 79px;
+    height: 68px;
+    object-fit: cover;
+    margin-right: -0.5rem;
+    vertical-align: middle;
+    
+  }
+  

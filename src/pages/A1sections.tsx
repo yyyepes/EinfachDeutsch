@@ -2,22 +2,31 @@ import Navbar from '../pages/Navbar';
 import '../pages/A1sections.css';
 import { useNavigate } from 'react-router-dom';
 import lockIcon from '../assets/lock.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+const NUM_SECTIONS = 8; // Cambia esto si tienes más/menos secciones
 
 export default function A1Sections() {
   const navigate = useNavigate();
 
-  // Simulación de progreso: solo la Section 1 está desbloqueada
-  const [sections] = useState([
-    { id: 1, unlocked: true },
-    { id: 2, unlocked: false },
-    { id: 3, unlocked: false },
-    { id: 4, unlocked: false },
-    { id: 5, unlocked: false },
-    { id: 6, unlocked: false },
-    { id: 7, unlocked: false },
-    { id: 8, unlocked: false },
-  ]);
+  // Estado dinámico según número de secciones
+  const [sections, setSections] = useState(
+    Array.from({ length: NUM_SECTIONS }, (_, i) => ({
+      id: i + 1,
+      unlocked: i === 0, // Solo Section 1 está desbloqueada al inicio
+    }))
+  );
+
+  useEffect(() => {
+    setSections(prevSections =>
+      prevSections.map(section => ({
+        ...section,
+        unlocked:
+          section.id === 1 ||
+          localStorage.getItem(`section${section.id}Unlocked`) === 'true'
+      }))
+    );
+  }, []);
 
   return (
     <div>

@@ -512,8 +512,13 @@ export default function SectionView() {
     activity3: "Multiple choice",
   };
   
-
+   
   // Funciones para marcar progreso
+  function unlockNextSection(currentSectionId: number) {
+    const nextSectionId = currentSectionId + 1;
+    localStorage.setItem(`section${nextSectionId}Unlocked`, 'true');
+  }
+  
   function toggleProgress(key: keyof typeof progress) {
     setProgress(prev => ({ ...prev, [key]: !prev[key] }));
   }
@@ -522,6 +527,8 @@ export default function SectionView() {
   }
   function setSectionDone() {
     setProgress(prev => ({ ...prev, sectionDone: true }));
+    //localStorage.setItem('section2Unlocked', 'true'); // <-- Esta línea
+    unlockNextSection(1); // Si estás en Section 1
   }
 
   return (
@@ -744,4 +751,6 @@ export default function SectionView() {
       </div>
     </div>
   );
+  
+
 }

@@ -35,7 +35,7 @@ export default function Navbar() {
           {showDropdown && (
             <div className="dropdown">
               <button onClick={() => { setShowDropdown(false); navigate('/profile'); }}>Profile</button>
-              <button>Reminder</button>
+              <button onClick={() => { setShowDropdown(false); navigate('/reminder'); }}>Reminder</button>
               <button onClick={handleSignOut}>Sign out</button>
               {/* 👆 LLAMA handleSignOut */}
             </div>

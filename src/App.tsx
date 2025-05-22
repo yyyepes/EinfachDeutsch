@@ -12,6 +12,7 @@ import FlashcardsFood from './pages/FlashcardsFood';
 import FlashcardsTravel from './pages/FlashcardsTravel';
 import FlashcardsFamily from './pages/FlashcardsFamily'; // <-- Importa el componente
 import Profile from './pages/Profile';
+import Reminder from './pages/Reminder';
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
         <Route path="/practice/travel" element={<FlashcardsTravel />} />
         <Route path="/practice/family" element={<FlashcardsFamily />} />
         <Route path="/profile" element={<Profile />} />
-        
+        <Route path="/reminder" element={<Reminder />} />
+
 
       </Routes>
     </Router>

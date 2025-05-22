@@ -14,7 +14,7 @@ export default function PracticeView() {
     { label: 'Food', color: '#22c55e' },
   ];
   const row2 = [
-    { label: 'Travel', color: '#3b82f6' },
+    { label: 'Travel', color: '#a78bfa' },
     { label: 'Family', color: '#ef4444' },
   ];
 

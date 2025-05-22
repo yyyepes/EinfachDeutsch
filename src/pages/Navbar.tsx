@@ -34,7 +34,7 @@ export default function Navbar() {
           <span>{user ? user.name : 'USER'} ▾</span>
           {showDropdown && (
             <div className="dropdown">
-              <button>Profile</button>
+              <button onClick={() => { setShowDropdown(false); navigate('/profile'); }}>Profile</button>
               <button>Language</button>
               <button onClick={handleSignOut}>Sign out</button>
               {/* 👆 LLAMA handleSignOut */}

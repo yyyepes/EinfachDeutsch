@@ -1,7 +1,15 @@
+// src/Context/UserContext.tsx
 import { createContext, useContext, useState } from "react";
 import type { ReactNode } from "react";
 
-type User = { name: string; email: string } | null;
+export type User = {
+  name: string;
+  lastName: string;
+  email: string;
+  birthDate: string;
+  country: string;
+  photoUrl?: string; // <-- Nueva propiedad
+} | null;
 
 type UserContextType = {
   user: User;
@@ -9,15 +17,23 @@ type UserContextType = {
   logout: () => void;
 };
 
+const DEFAULT_USER: User = {
+  name: "Vanessa",
+  lastName: "Reniz",
+  email: "vanereniz@gmail.com",
+  birthDate: "2001-05-15",
+  country: "Colombia"
+};
+
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export function UserProvider({ children }: { children: ReactNode }) {
-  const [user, setUserState] = useState<User>(null);
+  const [user, setUserState] = useState<User>(DEFAULT_USER);
 
   // Fake "logout"
   const logout = () => setUserState(null);
 
-  // Fake "login" by setting user
+  // Fake "login"/update
   const setUser = (user: User) => setUserState(user);
 
   return (

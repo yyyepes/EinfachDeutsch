@@ -41,8 +41,14 @@ html, body {
   text-align: center;
   box-shadow: 0 2px 10px rgba(56,189,248,0.10);
   margin-left: 0.8rem;
+  box-shadow: 0 4px 18px #38bdf877;
+  transition: background 0.16s, box-shadow 0.18s, transform 0.16s;
 }
-
+.section-btn:hover, .section-btn:focus {
+  background: #0ea5e9;
+  box-shadow: 0 8px 28px #38bdf89a;
+  transform: scale(1.045);
+}
 .section-title-centered {
   width: 90%;
   max-width: 600px;
@@ -142,6 +148,7 @@ html, body {
   width: 360px !important;
   height: auto;
   margin-bottom: 0.6rem;
+  filter: drop-shadow(0 8px 32px #38bdf880); /* Sombra azul suave */
 }
 
 .klaus-speech {
@@ -250,6 +257,7 @@ html, body {
     height: auto;
     display: block;
     margin: 0 auto;
+    filter: drop-shadow(0 8px 32px #38bdf880); /* Sombra azul suave */
   }
 
   .klaus-speech {

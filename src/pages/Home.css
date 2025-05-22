@@ -21,6 +21,7 @@
 .klaus {
   max-width: 300px;
   height: auto;
+  filter: drop-shadow(0 8px 32px #38bdf880); /* Sombra azul suave */
 }
 
 .levels-container {
@@ -98,6 +99,7 @@
   .klaus {
     max-width: 180px;
     margin-bottom: 1rem;
+    filter: drop-shadow(0 8px 32px #38bdf880); /* Sombra azul suave */
   }
 
   .levels-container {

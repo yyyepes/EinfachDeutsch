@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
         <Link to="/home">Home</Link>
         <Link to="/practice">Practice</Link>
-        <Link to="/progress">Progress</Link>
+        <Link to="/progress">Overall Progress</Link>
         <div className="navbar-user" onClick={() => setShowDropdown(!showDropdown)}>
           <span>{user ? user.name : 'USER'} ▾</span>
           {showDropdown && (

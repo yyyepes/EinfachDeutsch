@@ -1,5 +1,4 @@
 // src/pages/FlashcardsHouse.tsx
-// src/pages/FlashcardsHouse.tsx
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
@@ -51,11 +50,10 @@ export default function FlashcardsHouse() {
     setKnownCount(0);
   }
 
-  // ← HOUSE button
   function BackButton() {
     return (
       <button
-        className="house-back-btn"
+        className="flashcardhouse-back-btn"
         style={{
           background: HOUSE_COLOR,
           color: "#fff",
@@ -63,9 +61,26 @@ export default function FlashcardsHouse() {
         }}
         onClick={() => navigate('/practice')}
       >
-        <span className="arrow-icon">←</span>
+        <span className="flashcardhouse-arrow-icon">←</span>
         <span>HOUSE</span>
       </button>
+    );
+  }
+
+  function renderFlashcardImage(img: string | undefined, alt: string) {
+    if (!img) return null;
+    if (img.startsWith("/") || img.startsWith("http")) {
+      return (
+        <img
+          src={img}
+          alt={alt}
+          className="flashcardhouse-img"
+          style={{ marginRight: "0.6em" }}
+        />
+      );
+    }
+    return (
+      <span style={{ fontSize: "2.5rem", marginRight: "0.6em" }}>{img}</span>
     );
   }
 
@@ -74,9 +89,9 @@ export default function FlashcardsHouse() {
       <div>
         <Navbar />
         <BackButton />
-        <div className="flashcard-container">
+        <div className="flashcardhouse-container">
           <div className="flashcardhouse-card flashcardhouse-finished">
-            <div className="flashcard-category" style={{ background: HOUSE_ACCENT }}>
+            <div className="flashcardhouse-category" style={{ background: HOUSE_ACCENT }}>
               ¡Well Done!
             </div>
             <div className="flashcardhouse-word">
@@ -93,40 +108,20 @@ export default function FlashcardsHouse() {
 
   const flashcard = queue[currentIndex];
 
-  // ---- IMAGEN (emoji o URL) ----
-  function renderFlashcardImage(img: string | undefined, alt: string) {
-    if (!img) return null;
-    // Si es una URL (ruta relativa o absoluta)
-    if (img.startsWith("/") || img.startsWith("http")) {
-      return (
-        <img
-          src={img}
-          alt={alt}
-          className="flashcardhouse-img"
-          style={{ marginRight: "0.6em" }}
-        />
-      );
-    }
-    // Si es emoji u otro caracter
-    return (
-      <span style={{ fontSize: "2.5rem", marginRight: "0.6em" }}>{img}</span>
-    );
-  }
-
   return (
     <div>
       <Navbar />
       <BackButton />
-      <div className="flashcard-container">
-        <div className="flashcard-instructions" style={{ color: HOUSE_ACCENT }}>
+      <div className="flashcardhouse-container">
+        <div className="flashcardhouse-instructions" style={{ color: HOUSE_ACCENT }}>
           Press 'Know' if you know it, or 'Study Again' to review.
         </div>
         <div
-          className={`flashcard-card ${animDirection ? 'slide-' + animDirection : ''}`}
+          className={`flashcardhouse-card ${animDirection ? 'slide-' + animDirection : ''}`}
           ref={cardRef}
           style={{ background: HOUSE_COLOR, boxShadow: "0 4px 30px #f472b677" }}
         >
-          <div className="flashcard-category" style={{ background: HOUSE_ACCENT }}>
+          <div className="flashcardhouse-category" style={{ background: HOUSE_ACCENT }}>
             {flashcard.category}
           </div>
           <div className="flashcardhouse-word">

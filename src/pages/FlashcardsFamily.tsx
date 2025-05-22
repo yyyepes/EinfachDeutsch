@@ -53,7 +53,7 @@ export default function FlashcardsFamily() {
   function BackButton() {
     return (
       <button
-        className="family-back-btn"
+        className="flashcardfamily-back-btn"
         style={{
           background: FAMILY_COLOR,
           color: "#fff",
@@ -61,7 +61,7 @@ export default function FlashcardsFamily() {
         }}
         onClick={() => navigate('/practice')}
       >
-        <span className="arrow-icon">←</span>
+        <span className="flashcardfamily-arrow-icon">←</span>
         <span>FAMILY</span>
       </button>
     );
@@ -89,9 +89,9 @@ export default function FlashcardsFamily() {
       <div>
         <Navbar />
         <BackButton />
-        <div className="flashcard-container">
-          <div className="flashcard-card flashcardfamily-finished">
-            <div className="flashcard-category" style={{ background: FAMILY_ACCENT }}>
+        <div className="flashcardfamily-container">
+          <div className="flashcardfamily-card flashcardfamily-finished">
+            <div className="flashcardfamily-category" style={{ background: FAMILY_ACCENT }}>
               ¡Well Done!
             </div>
             <div className="flashcardfamily-word">
@@ -112,16 +112,16 @@ export default function FlashcardsFamily() {
     <div>
       <Navbar />
       <BackButton />
-      <div className="flashcard-container">
-        <div className="flashcard-instructions" style={{ color: FAMILY_ACCENT }}>
+      <div className="flashcardfamily-container">
+        <div className="flashcardfamily-instructions" style={{ color: FAMILY_ACCENT }}>
           Press 'Know' if you know it, or 'Study Again' to review.
         </div>
         <div
-          className={`flashcard-card ${animDirection ? 'slide-' + animDirection : ''}`}
+          className={`flashcardfamily-card ${animDirection ? 'slide-' + animDirection : ''}`}
           ref={cardRef}
           style={{ background: FAMILY_COLOR, boxShadow: "0 4px 30px #ef444477" }}
         >
-          <div className="flashcard-category" style={{ background: FAMILY_ACCENT }}>
+          <div className="flashcardfamily-category" style={{ background: FAMILY_ACCENT }}>
             {flashcard.category}
           </div>
           <div className="flashcardfamily-word">

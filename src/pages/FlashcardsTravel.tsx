@@ -53,7 +53,7 @@ export default function FlashcardsTravel() {
   function BackButton() {
     return (
       <button
-        className="travel-back-btn"
+        className="flashcardtravel-back-btn"
         style={{
           background: TRAVEL_COLOR,
           color: "#fff",
@@ -61,7 +61,7 @@ export default function FlashcardsTravel() {
         }}
         onClick={() => navigate('/practice')}
       >
-        <span className="arrow-icon">←</span>
+        <span className="flashcardtravel-arrow-icon">←</span>
         <span>TRAVEL</span>
       </button>
     );
@@ -89,9 +89,9 @@ export default function FlashcardsTravel() {
       <div>
         <Navbar />
         <BackButton />
-        <div className="flashcard-container">
-          <div className="flashcard-card flashcardtravel-finished">
-            <div className="flashcard-category" style={{ background: TRAVEL_ACCENT }}>
+        <div className="flashcardtravel-container">
+          <div className="flashcardtravel-card flashcardtravel-finished">
+            <div className="flashcardtravel-category" style={{ background: TRAVEL_ACCENT }}>
               ¡Well Done!
             </div>
             <div className="flashcardtravel-word">
@@ -112,16 +112,16 @@ export default function FlashcardsTravel() {
     <div>
       <Navbar />
       <BackButton />
-      <div className="flashcard-container">
-        <div className="flashcard-instructions" style={{ color: TRAVEL_ACCENT }}>
+      <div className="flashcardtravel-container">
+        <div className="flashcardtravel-instructions" style={{ color: TRAVEL_ACCENT }}>
           Press 'Know' if you know it, or 'Study Again' to review.
         </div>
         <div
-          className={`flashcard-card ${animDirection ? 'slide-' + animDirection : ''}`}
+          className={`flashcardtravel-card ${animDirection ? 'slide-' + animDirection : ''}`}
           ref={cardRef}
           style={{ background: TRAVEL_COLOR, boxShadow: "0 4px 30px #a78bfa77" }}
         >
-          <div className="flashcard-category" style={{ background: TRAVEL_ACCENT }}>
+          <div className="flashcardtravel-category" style={{ background: TRAVEL_ACCENT }}>
             {flashcard.category}
           </div>
           <div className="flashcardtravel-word">

@@ -6,22 +6,22 @@
 }
 
 .flashcard-card {
-  width: 565px;
+  width: 490px;
   max-width: 98vw;   /* <-- asegura que nunca sobrepase el viewport */
   min-height: 330px;
-  background: #378bfa !important;;
+  background: #378bfa;
   border-radius: 2.2rem;
   margin-top: 2rem;
   margin-bottom: 2.2rem;
-  box-shadow: 0 4px 30px #175bff30 !important;
+  box-shadow: 0 4px 30px #175bff30;
   color: #fff;
   padding: 2.5rem 2rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.28s cubic-bezier(0.51,1.08,0.29,0.99), opacity 0.2s;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .flashcard-card.slide-right {
@@ -51,13 +51,13 @@
 .flashcard-translation,
 .flashcard-use {
   max-width: 100%;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  text-align: center !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
 }
 
 .flashcard-word {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin: 1.2rem 0 0.2rem 0;
   letter-spacing: 1px;
@@ -76,9 +76,9 @@
   line-height: 1.4;
   text-align: center;
   max-width: 95%;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
   display: block;
 }
 
@@ -112,7 +112,7 @@
 
 .flashcard-instructions {
   margin-top: 2rem;
-  color: #257 !important;;
+  color: #257 ;
   font-size: 1rem;
   opacity: 0.85;
   text-align: center;
@@ -120,7 +120,7 @@
 }
 
 .flashcard-finished {
-  background: #43c6fa !important;
+  background: #43c6fa;
   color: #fff;
   box-shadow: none;
 }
@@ -132,8 +132,8 @@
   margin-bottom: 2.5rem;
   font-weight: 700;
   line-height: 1.25;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
   font-size: 20px;
 }
 
@@ -189,4 +189,11 @@
 .flashcard-btn.restart:hover {
   background: #e0eaff;
   color: #2563eb;
+}
+.flashcard-img {
+  width: 88px;
+  height: 78px;
+  object-fit: cover;
+  margin-right: -1rem;
+  vertical-align: middle;
 }

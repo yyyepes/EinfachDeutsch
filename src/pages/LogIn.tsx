@@ -14,13 +14,21 @@ export default function LogIn() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     // 🚀 Simulación de login (en futuro, aquí irá tu llamada al backend)
-    setUser({ name: 'Vanessa', email: form.email });
-
+    setUser({
+      name: 'Vanessa',
+      lastName: 'Reniz',           // <-- Añadido
+      email: form.email,
+      birthDate: '2001-05-15',     // <-- Añadido
+      country: 'Colombia',         // <-- Añadido
+      photoUrl: undefined          // <-- Opcional
+    });
+  
     // Redirige al home
     navigate('/home');
   };
+  
 
   return (
     <div className="login-container">

@@ -7,6 +7,11 @@ import Section1View from './pages/Section1View'; //
 import Section2View from './pages/Section2View';
 import PracticeView from './pages/PracticeView';
 import FlashcardsHouse from './pages/FlashcardsHouse';
+import FlashcardsSchool from './pages/FlashcardsSchool';
+import FlashcardsFood from './pages/FlashcardsFood';
+import FlashcardsTravel from './pages/FlashcardsTravel';
+import FlashcardsFamily from './pages/FlashcardsFamily'; // <-- Importa el componente
+
 function App() {
   return (
     <Router>
@@ -20,6 +25,10 @@ function App() {
         <Route path="/sections/a1/section-2" element={<Section2View />} />
         <Route path="/practice" element={<PracticeView />} />
         <Route path="/practice/house" element={<FlashcardsHouse />} />
+        <Route path="/practice/school" element={<FlashcardsSchool />} />
+        <Route path="/practice/food" element={<FlashcardsFood />} />
+        <Route path="/practice/travel" element={<FlashcardsTravel />} />
+        <Route path="/practice/family" element={<FlashcardsFamily />} />
 
       </Routes>
     </Router>

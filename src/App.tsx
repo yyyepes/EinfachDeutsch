@@ -13,6 +13,7 @@ import FlashcardsTravel from './pages/FlashcardsTravel';
 import FlashcardsFamily from './pages/FlashcardsFamily'; // <-- Importa el componente
 import Profile from './pages/Profile';
 import Reminder from './pages/Reminder';
+import OverallProgress from './pages/OverallProgress';
 
 function App() {
   return (
@@ -22,7 +23,6 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} /> {/* 👈 agrega ruta nueva */}
         <Route path="/sections/a1" element={<A1Sections />} />
-        <Route path="/progress" element={<div>Coming soon...</div>} />
         <Route path="/sections/a1/section-1" element={<Section1View />} />
         <Route path="/sections/a1/section-2" element={<Section2View />} />
         <Route path="/practice" element={<PracticeView />} />
@@ -33,6 +33,7 @@ function App() {
         <Route path="/practice/family" element={<FlashcardsFamily />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/reminder" element={<Reminder />} />
+        <Route path="/progress" element={<OverallProgress />} />
 
 
       </Routes>

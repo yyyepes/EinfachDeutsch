@@ -14,7 +14,45 @@ import Questions from './Questions.tsx';
 import MarkAsDoneButton from './MarkAsDoneButton';
 import Quiz from './Quiz.tsx'; // Ajusta la ruta si es diferente
 import ProgressReport from './ProgressReport';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
+
+// Define el estado del progreso de la sección
+type ProgressState = {
+  lesson1: boolean;
+  activity1: boolean;
+  activity2: boolean;
+  activity3: boolean;
+  quizDone: boolean;
+  sectionDone: boolean;
+};
+
+// Utilidad para guardar/cargar progreso en localStorage
+function loadSectionProgress(level: string, section: number): ProgressState {
+  const key = `progress_${level}_section${section}`;
+  const saved = localStorage.getItem(key);
+  if (saved) return JSON.parse(saved);
+  return {
+    lesson1: false,
+    activity1: false,
+    activity2: false,
+    activity3: false,
+    quizDone: false,
+    sectionDone: false,
+  };
+}
+
+function saveSectionProgress(level: string, section: number, state: ProgressState) {
+  const key = `progress_${level}_section${section}`;
+  localStorage.setItem(key, JSON.stringify(state));
+}
+
+
 // Boards para el LessonBoard
+
+
+
 const lessonBoards = [
   {
     title: "LESSON 1: Self-introduction",
@@ -484,12 +522,27 @@ const lessonBoards = [
     )
   }
   
-
-
-  
 ];
-export default function SectionView() {
+
+
+export default function Section1View() {
+  // Obtén nivel y número de sección de la URL (ej: /sections/A1/section-1)
+  const rawParams = useParams();
+  const level = (rawParams.level as string) || "A1";
+  const section = Number(rawParams.id) || 1;
   const navigate = useNavigate();
+
+  // Estado global del progreso, guardado/cargado desde localStorage
+  const [progress, setProgress] = useState<ProgressState>(
+    () => loadSectionProgress(level, section)
+  );
+
+  // Cada vez que cambia el progreso, guárdalo automáticamente
+  useEffect(() => {
+    saveSectionProgress(level, section, progress);
+  }, [progress, level, section]);
+
+  // Estados de navegación/vista
   const [view, setView] = useState<'content' | 'activities' | 'quiz'>('content');
   const [showContent, setShowContent] = useState(false);
   const [showActivities, setShowActivities] = useState(false);
@@ -497,47 +550,40 @@ export default function SectionView() {
   const [activityView, setActivityView] = useState('');
   const [showProgress, setShowProgress] = useState(false);
 
-  // Estado global del progreso (¡aquí!)
-  const [progress, setProgress] = useState({
-    lesson1: false,
-    activity1: false,
-    activity2: false,
-    activity3: false,
-    quizDone: false,
-    sectionDone: false,
-  });
+  // Títulos de las actividades
   const activityTitles: Record<string, string> = {
     activity1: "Flashcards",
     activity2: "Cloze test",
     activity3: "Multiple choice",
   };
-  
-   
-  // Funciones para marcar progreso
+
+  // Funciones para marcar progreso y desbloquear la siguiente sección
   function unlockNextSection(currentSectionId: number) {
     const nextSectionId = currentSectionId + 1;
-    localStorage.setItem(`section${nextSectionId}Unlocked`, 'true');
-  }
-  
-  function toggleProgress(key: keyof typeof progress) {
-    setProgress(prev => ({ ...prev, [key]: !prev[key] }));
-  }
-  function setQuizDone() {
-    setProgress(prev => ({ ...prev, quizDone: true }));
-  }
-  function setSectionDone() {
-    setProgress(prev => ({ ...prev, sectionDone: true }));
-    //localStorage.setItem('section2Unlocked', 'true'); // <-- Esta línea
-    unlockNextSection(1); // Si estás en Section 1
+    localStorage.setItem(`section${nextSectionId}Unlocked`, "true");
   }
 
+  function toggleProgress(key: keyof ProgressState) {
+    setProgress((prev) => ({ ...prev, [key]: !prev[key] }));
+  }
+
+  function setQuizDone() {
+    setProgress((prev) => ({ ...prev, quizDone: true }));
+  }
+
+  function setSectionDone() {
+    setProgress((prev) => ({ ...prev, sectionDone: true }));
+    unlockNextSection(section);
+  }
+
+  // --- RENDER ---
   return (
     <div>
       <Navbar />
 
       <div className="top-section-btn-container">
-        <button className="section-btn" onClick={() => navigate('/sections/a1')}>
-          ← SECTION 1
+        <button className="section-btn" onClick={() => navigate(`/sections/${level}`)}>
+          ← SECTION {section}
         </button>
       </div>
 
@@ -547,46 +593,66 @@ export default function SectionView() {
 
       <div className="section-view-container">
         <div className="section-sidebar">
-          <button className="sidebar-btn" onClick={() => {
-            setShowContent(!showContent);
-            setShowActivities(false);
-            setView('content');
-            setLessonView('');
-            setActivityView('');
-          }}>
+          <button
+            className="sidebar-btn"
+            onClick={() => {
+              setShowContent(!showContent);
+              setShowActivities(false);
+              setView("content");
+              setLessonView("");
+              setActivityView("");
+            }}
+          >
             CONTENT ▼
           </button>
           {showContent && (
             <div className="dropdown-list">
-              <span className="dropdown-item" onClick={() => setLessonView('lesson1')}>• Lessons</span>
+              <span className="dropdown-item" onClick={() => setLessonView("lesson1")}>
+                • Lessons
+              </span>
             </div>
           )}
-          <button className="sidebar-btn activities-btn" onClick={() => {
-            setShowActivities(!showActivities);
-            setShowContent(false);
-            setView('activities');
-            setLessonView('');
-            setActivityView('');
-          }}>
+          <button
+            className="sidebar-btn activities-btn"
+            onClick={() => {
+              setShowActivities(!showActivities);
+              setShowContent(false);
+              setView("activities");
+              setLessonView("");
+              setActivityView("");
+            }}
+          >
             ACTIVITIES ▼
           </button>
           {showActivities && (
             <div className="dropdown-list">
-              <span className="dropdown-item" onClick={() => setActivityView('activity1')}>• Activity 1: Flaschards</span>
-              <span className="dropdown-item" onClick={() => setActivityView('activity2')}>• Activity 2: Cloze test</span>
-              <span className="dropdown-item" onClick={() => setActivityView('activity3')}>• Activity 3: Multiple choice</span>
+              <span className="dropdown-item" onClick={() => setActivityView("activity1")}>
+                • Activity 1: Flashcards
+              </span>
+              <span className="dropdown-item" onClick={() => setActivityView("activity2")}>
+                • Activity 2: Cloze test
+              </span>
+              <span className="dropdown-item" onClick={() => setActivityView("activity3")}>
+                • Activity 3: Multiple choice
+              </span>
             </div>
           )}
-          <button className="sidebar-btn quiz-btn" onClick={() => {
-            setView('quiz');
-            setShowContent(false);
-            setShowActivities(false);
-            setLessonView('');
-            setActivityView('');
-          }}>
+          <button
+            className="sidebar-btn quiz-btn"
+            onClick={() => {
+              setView("quiz");
+              setShowContent(false);
+              setShowActivities(false);
+              setLessonView("");
+              setActivityView("");
+            }}
+          >
             QUIZ
           </button>
-          <button className="sidebar-btn progress-btn" onClick={() => setShowProgress(true)}>
+          <button
+            className="sidebar-btn progress-btn"
+            onClick={() => setShowProgress(true)}
+          >
             <img src={Procs} alt="Progress" className="progress-icon" /> PROGRESS
           </button>
         </div>
@@ -598,7 +664,13 @@ export default function SectionView() {
               <div style={{ textAlign: "center", marginTop: 28 }}>
                 <button
                   className="section-btn"
-                  style={{ background: "#1769aa", color: "#fff", fontWeight: 700, fontSize: 22, borderRadius: 40 }}
+                  style={{
+                    background: "#1769aa",
+                    color: "#fff",
+                    fontWeight: 700,
+                    fontSize: 22,
+                    borderRadius: 40,
+                  }}
                   onClick={() => setShowProgress(false)}
                 >
                   Back
@@ -606,151 +678,180 @@ export default function SectionView() {
               </div>
             </div>
           ) : (
-          <>
-            {view === 'content' && (
-              <div className="section-content">
-                {lessonView === '' ? (
-                  <>
-                    <div className="klaus-balloon-container">
-                      <img src={klaus} className="klaus-img" alt="Klaus mascot" />
-                    </div>
-                    <div className="next-btn-wrapper-intro">
-                      <button className="next-btn" onClick={() => setLessonView('lesson1')}>
-                        <img src={nextImg} alt="Next" className="next-img" />
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <LessonBoard boards={lessonBoards} />
-                    <MarkAsDoneButton
-                      done={progress.lesson1}
-                      onClick={() => toggleProgress('lesson1')}
-                      label="Finish Lessons"
-                    />
-                    <div className="next-btn-wrapper" style={{ marginTop: 30 }}>
-                      <button className="next-btn" onClick={() => {
-                        setView('activities');
-                        setLessonView('');
-                      }}>
-                        <img src={nextImg} alt="Next" className="next-img" />
-                      </button>
-                      <button className="next-btn" onClick={() => setLessonView('')}>
-                        <img src={nextOp} alt="Back" className="next-img" />
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {view === 'activities' && (
-              <div className="section-content">
-                {activityView === '' ? (
-                  <>
-                    <p>Choose a learning activity from the dropdown menu on the left.</p>
-                    <div className="klaus-activity-container"style={{ marginTop: "60px" }}>
-                      <img src={klaus2} className="klaus-img" alt="Klaus Activity mascot" />
-                    </div>
-                    <div className="next-btn-wrapper">
-                      <button className="next-btn-actv" onClick={() => setActivityView('activity1')}>
-                        <img src={nextImg} alt="Next" className="next-img" />
-                      </button>
-                      <button className="next-btn" onClick={() => {
-                        setView('content');
-                        setLessonView('lesson1');
-                      }}>
-                        <img src={nextOp} alt="Back" className="next-img" />
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <p><strong>{`Activity ${activityView.replace('activity', '')}: ${activityTitles[activityView]}`}</strong></p>
-                    {activityView === 'activity1' && (
-                      <div style={{ margin: '30px 0' }}>
-                        <Flashcards />
-                        <MarkAsDoneButton
-                          done={progress.activity1}
-                          onClick={() => toggleProgress('activity1')}
-                          label="Mark as done"
-                        />
+            <>
+              {view === "content" && (
+                <div className="section-content">
+                  {lessonView === "" ? (
+                    <>
+                      <div className="klaus-balloon-container">
+                        <img src={klaus} className="klaus-img" alt="Klaus mascot" />
                       </div>
-                    )}
-                    {activityView === 'activity2' && (
-                      <div style={{ margin: '30px 0' }}>
-                        <ClozeTest />
-                        <MarkAsDoneButton
-                          done={progress.activity2}
-                          onClick={() => toggleProgress('activity2')}
-                          label="Mark as done"
-                        />
+                      <div className="next-btn-wrapper-intro">
+                        <button className="next-btn" onClick={() => setLessonView("lesson1")}>
+                          <img src={nextImg} alt="Next" className="next-img" />
+                        </button>
                       </div>
-                    )}
-                    {activityView === 'activity3' && (
-                      <div style={{ margin: '30px 0' }}>
-                        <Questions />
-                        <MarkAsDoneButton
-                          done={progress.activity3}
-                          onClick={() => toggleProgress('activity3')}
-                          label="Mark as done"
-                        />
+                    </>
+                  ) : (
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
+                    >
+                      <LessonBoard boards={lessonBoards} />
+                      <MarkAsDoneButton
+                        done={progress.lesson1}
+                        onClick={() => toggleProgress("lesson1")}
+                        label="Finish Lessons"
+                      />
+                      <div className="next-btn-wrapper" style={{ marginTop: 30 }}>
+                        <button
+                          className="next-btn"
+                          onClick={() => {
+                            setView("activities");
+                            setLessonView("");
+                          }}
+                        >
+                          <img src={nextImg} alt="Next" className="next-img" />
+                        </button>
+                        <button className="next-btn" onClick={() => setLessonView("")}>
+                          <img src={nextOp} alt="Back" className="next-img" />
+                        </button>
                       </div>
-                    )}
-                    <div className="next-btn-wrapper">
-                      <button className="next-btn-actv" onClick={() => {
-                        if (activityView === 'activity1') {
-                          setActivityView('activity2');
-                        } else if (activityView === 'activity2') {
-                          setActivityView('activity3');
-                        } else if (activityView === 'activity3') {
-                          setView('quiz');
-                          setActivityView('');
-                        }
-                      }}>
-                        <img src={nextImg} alt="Next" className="next-img" />
-                      </button>
-                      <button className="next-btn" onClick={() => {
-                        if (activityView === 'activity3') {
-                          setActivityView('activity2');
-                        } else if (activityView === 'activity2') {
-                          setActivityView('activity1');
-                        } else if (activityView === 'activity1') {
-                          setActivityView('');
-                        }
-                      }}>
-                        <img src={nextOp} alt="Back" className="next-img" />
-                      </button>
                     </div>
-                  </>
-                )}
-              </div>
-            )}
-
-            {view === 'quiz' && (
-              <div className="section-content">
-                <Quiz
-                  quizDone={progress.quizDone}
-                  setQuizDone={setQuizDone}
-                  sectionDone={progress.sectionDone}
-                  setSectionDone={setSectionDone}
-                />
-                <div className="next-btn-wrapper-quiz">
-                  <button className="next-btn" onClick={() => {
-                    setView('activities');
-                    setActivityView('activity3');
-                  }}>
-                    <img src={nextOp} alt="Back" className="next-img" />
-                  </button>
+                  )}
                 </div>
-              </div>
-            )}
-          </>
+              )}
+
+              {view === "activities" && (
+                <div className="section-content">
+                  {activityView === "" ? (
+                    <>
+                      <p>Choose a learning activity from the dropdown menu on the left.</p>
+                      <div className="klaus-activity-container" style={{ marginTop: "60px" }}>
+                        <img src={klaus2} className="klaus-img" alt="Klaus Activity mascot" />
+                      </div>
+                      <div className="next-btn-wrapper">
+                        <button
+                          className="next-btn-actv"
+                          onClick={() => setActivityView("activity1")}
+                        >
+                          <img src={nextImg} alt="Next" className="next-img" />
+                        </button>
+                        <button
+                          className="next-btn"
+                          onClick={() => {
+                            setView("content");
+                            setLessonView("lesson1");
+                          }}
+                        >
+                          <img src={nextOp} alt="Back" className="next-img" />
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <p>
+                        <strong>
+                          {`Activity ${activityView.replace("activity", "")}: ${
+                            activityTitles[activityView]
+                          }`}
+                        </strong>
+                      </p>
+                      {activityView === "activity1" && (
+                        <div style={{ margin: "30px 0" }}>
+                          <Flashcards />
+                          <MarkAsDoneButton
+                            done={progress.activity1}
+                            onClick={() => toggleProgress("activity1")}
+                            label="Mark as done"
+                          />
+                        </div>
+                      )}
+                      {activityView === "activity2" && (
+                        <div style={{ margin: "30px 0" }}>
+                          <ClozeTest />
+                          <MarkAsDoneButton
+                            done={progress.activity2}
+                            onClick={() => toggleProgress("activity2")}
+                            label="Mark as done"
+                          />
+                        </div>
+                      )}
+                      {activityView === "activity3" && (
+                        <div style={{ margin: "30px 0" }}>
+                          <Questions />
+                          <MarkAsDoneButton
+                            done={progress.activity3}
+                            onClick={() => toggleProgress("activity3")}
+                            label="Mark as done"
+                          />
+                        </div>
+                      )}
+                      <div className="next-btn-wrapper">
+                        <button
+                          className="next-btn-actv"
+                          onClick={() => {
+                            if (activityView === "activity1") {
+                              setActivityView("activity2");
+                            } else if (activityView === "activity2") {
+                              setActivityView("activity3");
+                            } else if (activityView === "activity3") {
+                              setView("quiz");
+                              setActivityView("");
+                            }
+                          }}
+                        >
+                          <img src={nextImg} alt="Next" className="next-img" />
+                        </button>
+                        <button
+                          className="next-btn"
+                          onClick={() => {
+                            if (activityView === "activity3") {
+                              setActivityView("activity2");
+                            } else if (activityView === "activity2") {
+                              setActivityView("activity1");
+                            } else if (activityView === "activity1") {
+                              setActivityView("");
+                            }
+                          }}
+                        >
+                          <img src={nextOp} alt="Back" className="next-img" />
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {view === "quiz" && (
+                <div className="section-content">
+                  <Quiz
+                    quizDone={progress.quizDone}
+                    setQuizDone={setQuizDone}
+                    sectionDone={progress.sectionDone}
+                    setSectionDone={setSectionDone}
+                  />
+                  <div className="next-btn-wrapper-quiz">
+                    <button
+                      className="next-btn"
+                      onClick={() => {
+                        setView("activities");
+                        setActivityView("activity3");
+                      }}
+                    >
+                      <img src={nextOp} alt="Back" className="next-img" />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
     </div>
   );
-  
-
 }

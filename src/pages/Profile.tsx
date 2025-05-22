@@ -3,11 +3,13 @@ import Navbar from './Navbar';
 import { useUser } from '../Context/UserContext';
 import './Profile.css';
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
   const { user, setUser } = useUser();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [editing, setEditing] = useState(false);
+  const navigate = useNavigate();
 
   // Estado local para el formulario de edición
   const [form, setForm] = useState({
@@ -19,11 +21,10 @@ export default function Profile() {
     photoUrl: user?.photoUrl || "",
   });
 
-  // Si el usuario cambia la foto (en modo edición también funciona)
+  // Cambiar foto
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.result) {
@@ -36,14 +37,14 @@ export default function Profile() {
     reader.readAsDataURL(file);
   };
 
-  // Botón de guardar cambios
+  // Guardar cambios
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-    setUser({ ...user, ...form }); // Actualiza el usuario en contexto
+    setUser({ ...user, ...form });
     setEditing(false);
   };
 
-  // Usa la imagen subida o avatar por defecto
+  // Avatar
   const avatarSrc =
     form.photoUrl ||
     user?.photoUrl ||
@@ -54,6 +55,18 @@ export default function Profile() {
       <Navbar />
       <div className="profile-container">
         <div className="profile-card">
+          {/* X Cerrar */}
+          <button
+            className="profile-close-btn"
+            title="Back to Home"
+            onClick={() => navigate('/home')}
+          >
+            <svg width="22" height="22" viewBox="0 0 22 22">
+              <line x1="5" y1="5" x2="17" y2="17" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round"/>
+              <line x1="17" y1="5" x2="5" y2="17" stroke="#2563eb" strokeWidth="2.5" strokeLinecap="round"/>
+            </svg>
+          </button>
+
           <div className="profile-avatar" style={{ position: 'relative' }}>
             <img
               src={avatarSrc}
@@ -67,7 +80,7 @@ export default function Profile() {
                 background: "#e0e7ff"
               }}
             />
-            {/* Botón de editar foto */}
+            {/* Editar foto */}
             <button
               className="profile-edit-btn"
               onClick={() => fileInputRef.current?.click()}
@@ -179,3 +192,4 @@ export default function Profile() {
     </>
   );
 }
+

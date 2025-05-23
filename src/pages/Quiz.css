@@ -6,20 +6,22 @@
   }
   
   .klaus-intro-img {
-    width: 360px !important;    /* Usa !important para forzar el tamaño */
+    width: 150px !important;
     height: auto !important;
     max-width: none !important;
     min-width: 0 !important;
     display: block;
-    filter: drop-shadow(0 8px 32px #38bdf880); /* Sombra azul suave */
+    margin-top: -1.5rem;
+    margin-left: -5rem;      /* Deja espacio del bloque azul */
+    filter: drop-shadow(0 8px 32px #38bdf880);
   }
   
   
   .quiz-intro-row {
     display: flex;
-    align-items: center;
-    gap: 1.2rem !important;
-    margin-bottom: 2.5rem;
+   align-items: flex-end;     /* Alinea abajo como tu ejemplo */
+   justify-content: center;   /* Centra horizontalmente */
+   gap: 0.8rem;
   }
   
   .klaus-balloon.quiz-balloon {
@@ -40,14 +42,14 @@
     color: #fff;
     border-radius: 2.5rem;
     padding: 2.1rem 2.4rem;
-    font-size: 1.14rem;
+    font-size: 1rem;
     font-weight: 700;
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     box-sizing: border-box;
-    text-align: left;
+    text-align: justify;
     box-shadow: 0 6px 28px #0a4ec533, 0 1px 8px #38bdf829;
-    margin: 0 auto;
+    margin-left: 7rem;
     position: relative;
     overflow-wrap: break-word;
     word-break: break-word;

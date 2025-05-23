@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { quizQuestions } from "../data/quiz1";
-import klausIntro from "../assets/KlausIntro.png";
+import klausIntro from "../assets/KlausIntro2.png";
 import klausScore from "../assets/KlausSc.png";
 import MarkAsDoneButton from "./MarkAsDoneButton";
 import './Quiz.css';
@@ -44,8 +44,8 @@ export default function Quiz({ quizDone, setQuizDone, sectionDone, setSectionDon
   if (step === "intro") {
     return (
       <div className="quiz-intro-container">
+          
         <div className="quiz-intro-row">
-          <img src={klausIntro} alt="Klaus" className="klaus-intro-img" />
           <div className="quiz-cloud">
             <div>
               <div style={{ textAlign: "center" }}>
@@ -53,11 +53,14 @@ export default function Quiz({ quizDone, setQuizDone, sectionDone, setSectionDon
                  color: "#ffffff", background: "#1769aa"
                  , borderRadius: 8, padding: "2px 8px", marginRight: 6
                 }}>
-                  ⭐ INSTRUCTIONS
+                  INSTRUCTIONS
                 </span>
               </div>
               <br /><br />
               <b>
+                <span>Hi there! Now that you've completed the lesson and activities, <br>
+                </br>it's time to start your quiz. </span>
+
                 <span style={{ color: "#ffd94d" }}>Remember</span>
                 {", you'll need at least "}
                 <span style={{ color: "#19ffa3" }}>50%</span>
@@ -71,6 +74,7 @@ export default function Quiz({ quizDone, setQuizDone, sectionDone, setSectionDon
               </span>
             </div>
           </div>
+          <img src={klausIntro} alt="Klaus" className="klaus-intro-img" />
         </div>
         <button className="start-quiz-btn" onClick={() => setStep("quiz")}>
           START QUIZ

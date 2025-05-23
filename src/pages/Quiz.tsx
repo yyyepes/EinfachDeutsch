@@ -58,7 +58,7 @@ export default function Quiz({ quizDone, setQuizDone, sectionDone, setSectionDon
               </div>
               <br /><br />
               <b>
-                <span>Hi there! Now that you've completed the lesson and activities, <br>
+                <span>Hi there! Now that you've completed the lessons and activities, <br>
                 </br>it's time to start your quiz. </span>
 
                 <span style={{ color: "#ffd94d" }}>Remember</span>
@@ -188,8 +188,8 @@ export default function Quiz({ quizDone, setQuizDone, sectionDone, setSectionDon
               onClick={() => handleSelect(idx)}
               disabled={checked}
             >
-              <span className="option-letter" style={{ marginRight: 8 }}>
-                {String.fromCharCode(65 + idx)}.
+              <span className="option-letter" style={{ marginRight: 8, whiteSpace: "nowrap" }}>
+               {String.fromCharCode(65 + idx)}.
               </span>
               {opt}
             </button>

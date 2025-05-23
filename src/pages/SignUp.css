@@ -128,6 +128,52 @@
   cursor: pointer;
 }
 
+/* SIGNUP GRID FORM */
+.signup-grid-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.signup-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem 1.4rem;
+}
+
+.signup-grid .input {
+  width: 100%;
+}
+
+.signup-btn {
+  width: 100%;
+  margin-top: 1.3rem;
+  font-size: 1.15rem;
+  padding: 0.8rem 0;
+}
+
+@media (max-width: 640px) {
+  .signup-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem 0;
+  }
+  .signup-btn {
+    font-size: 1rem;
+    padding: 0.7rem 0;
+  }
+}
+.signup-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+
 /* -------------- RESPONSIVE -------------- */
 @media (max-width: 900px) {
   .container {

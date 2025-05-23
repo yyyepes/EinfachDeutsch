@@ -20,7 +20,7 @@ import { useParams } from 'react-router-dom';
 
 // Define el estado del progreso de la sección
 type ProgressState = {
-  lesson1: boolean;
+  lessons: boolean;
   activity1: boolean;
   activity2: boolean;
   activity3: boolean;
@@ -34,7 +34,7 @@ function loadSectionProgress(level: string, section: number): ProgressState {
   const saved = localStorage.getItem(key);
   if (saved) return JSON.parse(saved);
   return {
-    lesson1: false,
+    lessons: false,
     activity1: false,
     activity2: false,
     activity3: false,
@@ -337,7 +337,7 @@ const lessonBoards = [
             </div>
           </div>
         </div>
-        <div style={{ textAlign: "center", fontSize: "1.04rem", marginTop: 10 }}>
+        <div style={{ textAlign: "center", fontSize: "0.85rem", marginTop: 10 }}>
           <b>Notice:</b> See how each line matches a simple question or answer about nationality and country.
         </div>
       </div>
@@ -509,7 +509,7 @@ const lessonBoards = [
             </div>
           </div>
         </div>
-        <div style={{ textAlign: "center", fontSize: "1.04rem", marginTop: 10 }}>
+        <div style={{ textAlign: "center", fontSize: "0.85rem", marginTop: 10 }}>
           <b>Notice:</b> This is how you ask and answer about professions in a conversation.
         </div>
       </div>
@@ -717,8 +717,8 @@ export default function Section1View() {
                     >
                       <LessonBoard boards={lessonBoards} />
                       <MarkAsDoneButton
-                        done={progress.lesson1}
-                        onClick={() => toggleProgress("lesson1")}
+                        done={progress.lessons}
+                        onClick={() => toggleProgress("lessons")}
                         label="Finish Lessons"
                       />
                       <div className="next-btn-wrapper" style={{ marginTop: 30 }}>

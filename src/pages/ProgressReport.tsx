@@ -2,7 +2,7 @@ import './ProgressReport.css';
 
 type ProgressProps = {
   progress: {
-    lesson1: boolean;
+    lessons: boolean;
     activity1: boolean;
     activity2: boolean;
     activity3: boolean;
@@ -13,12 +13,12 @@ type ProgressProps = {
 
 export default function ProgressReport({ progress }: ProgressProps) {
   const items = [
-    { label: "Lesson 1", value: progress.lesson1 },
+    { label: "Lessons", value: progress.lessons },
     { label: "Activity 1", value: progress.activity1 },
     { label: "Activity 2", value: progress.activity2 },
     { label: "Activity 3", value: progress.activity3 },
     { label: "Quiz", value: progress.quizDone },
-    { label: "Section 1", value: progress.sectionDone }
+    { label: "Section", value: progress.sectionDone }
   ];
 
   // Split into two columns

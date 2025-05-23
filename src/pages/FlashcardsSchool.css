@@ -101,7 +101,7 @@
     color: #fff;
   }
   .flashcardschool-word {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     font-weight: bold;
     margin: 1.2rem 0 0.2rem 0;
     letter-spacing: 1px;

@@ -12,7 +12,7 @@
     min-width: 0 !important;
     display: block;
     margin-top: -1.5rem;
-    margin-left: -4.5rem;      /* Deja espacio del bloque azul */
+    margin-left: -3.8rem !important;      /* Deja espacio del bloque azul */
     filter: drop-shadow(0 8px 32px #38bdf880);
   }
   

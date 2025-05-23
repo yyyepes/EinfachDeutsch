@@ -106,10 +106,10 @@
 }
 
 .flashcardhouse-img {
-  width: auto;
+  width: 90px;
   height: 83px;
   object-fit: cover;
-  margin-right: 1rem !important;
+  margin-right: -0.5rem !important;
   vertical-align: middle;
 }
 
@@ -167,6 +167,10 @@
   background: #fbcfe8 !important;
   color: #ad1457;
 }
+ .flashcardhouse-btn.know:hover,
+ .flashcardhouse-btn.again:hover {
+  color: #fff !important;
+ }
 .flashcardhouse-btn.restart {
   background: #de77ba !important;
   color: #ad1457 !important;

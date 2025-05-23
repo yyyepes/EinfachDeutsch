@@ -125,6 +125,10 @@
   background: #fcd34d;
   color: #715600;
 }
+.flashcard-btn.know:hover,
+.flashcard-btn.again:hover {
+  color: #fff !important;
+}
 
 .flashcard-instructions {
   margin-top: 2rem;

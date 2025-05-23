@@ -112,10 +112,10 @@
     text-align: center;
   }
   .flashcardfood-img {
-    width: 96px;
-    height: 83px;
+    width: 98px;
+    height: auto;
     object-fit: cover;
-    margin-right: -1rem;
+    margin-right: -0.5rem !important;
     vertical-align: middle;
   }
   .flashcardfood-translation {
@@ -161,14 +161,18 @@
     transition: background 0.14s;
   }
   .flashcardfood-btn.know {
-    background: #4ade80;
+    background: #4ade80 !important;
     color: #065f46;
     cursor: pointer !important;
   }
   .flashcardfood-btn.again {
-    background: #bbf7d0;
+    background: #78f5a4 !important;
     color: #065f46;
     cursor: pointer !important;
+  }
+ .flashcardfood-btn.know:hover,
+ .flashcardfood-btn.again:hover {
+  color: #fff !important;
   }
   .flashcardfood-btn.restart {
     background: #fbbf24;

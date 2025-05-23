@@ -109,7 +109,7 @@
   width: 97px;
   height: 85px;
   object-fit: cover;
-  margin-right: -1rem;
+  margin-right: -0.5rem !important;
   vertical-align: middle;
 }
 
@@ -166,6 +166,10 @@
 .flashcardtravel-btn.again {
   background: #ddd6fe !important;
   color: #5b21b6 !important;
+}
+.flashcardtravel-btn.know:hover,
+.flashcardtravel-btn.again:hover {
+  color: #fff !important;
 }
 .flashcardtravel-btn.restart {
   background-color: #9260ea !important;

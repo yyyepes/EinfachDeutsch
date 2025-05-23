@@ -107,10 +107,10 @@
 }
 
 .flashcardfamily-img {
-  width: 92px;
-  height: 88px;
+  width: 98px;
+  height: 94px;
   object-fit: cover;
-  margin-right: -1rem;
+  margin-right: -0.5rem !important;
   vertical-align: middle;
 }
 
@@ -167,6 +167,10 @@
 .flashcardfamily-btn.again {
   background: #fca5a5 !important;
   color: #b91c1c !important;
+}
+.flashcardfamily-btn.know:hover,
+.flashcardfamily-btn.again:hover {
+  color: #fff !important;
 }
 .flashcardfamily-btn.restart {
   background: #eb6f5c !important;

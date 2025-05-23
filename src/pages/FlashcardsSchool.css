@@ -115,10 +115,10 @@
     text-align: center;
   }
   .flashcardschool-img {
-    width: 88px;
-    height: 78px;
+    width: 90px;
+    height: 83px;
     object-fit: cover;
-    margin-right: -1rem;
+    margin-right: -0.5rem !important;
     vertical-align: middle;
   }
   
@@ -173,9 +173,13 @@
     cursor: pointer !important;
   }
   .flashcardschool-btn.again {
-    background: #fde68a;
+    background: #f8de74 !important;
     color: #b45309;
     cursor: pointer !important;
+  }
+  .flashcardschool-btn.know:hover,
+  .flashcardschool-btn.again:hover {
+   color: #fff !important; 
   }
   .flashcardschool-btn.restart {
     background: #fbbf24;

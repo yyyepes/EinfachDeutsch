@@ -61,6 +61,22 @@
   font-weight: bold;
   margin: 1.2rem 0 0.2rem 0;
   letter-spacing: 1px;
+  max-width: 100%;
+  word-break: break-word;       /* Ya tienes esto */
+  overflow-wrap: break-word;    /* Ya tienes esto */
+  text-align: center;
+  /* Nuevo: permite múltiples líneas y quiebres suaves */
+  white-space: normal;
+  /* Opcional: evita que palabras MUY largas rompan el layout */
+  hyphens: auto;
+}
+
+/* Responsive: tamaño más pequeño en pantallas pequeñas */
+@media (max-width: 500px) {
+  .flashcard-word {
+    font-size: 1.18rem;
+    padding: 0 0.3rem;
+  }
 }
 
 .flashcard-translation {
@@ -191,9 +207,9 @@
   color: #2563eb;
 }
 .flashcard-img {
-  width: 88px;
-  height: 78px;
+  width: auto;
+  height: 83px;
   object-fit: cover;
-  margin-right: -1rem;
+  margin-right: -1.1rem;
   vertical-align: middle;
 }

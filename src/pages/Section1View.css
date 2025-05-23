@@ -17,6 +17,9 @@ html, body {
   overflow-x: auto;
   white-space: nowrap;
   padding: 1rem;
+  min-width: 0;           /* Esto ayuda a que flexbox no rompa */
+  word-break: break-word; /* Las palabras largas se parten */
+  overflow-wrap: anywhere; /* Hace wrap hasta de palabras largas sin espacio */
 }
 
 .top-section-btn-container {

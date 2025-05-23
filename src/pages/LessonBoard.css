@@ -124,7 +124,7 @@
   }
   
   /* Responsive para móvil */
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .lesson-board-card {
       max-width: 99vw;
       padding: 0.65rem 0.18rem 0.65rem 0.18rem;
@@ -135,6 +135,10 @@
     .lesson-board-content {
       font-size: 0.89rem;
       max-width: 97vw;
+      word-break: break-word !important;
+      overflow-wrap: anywhere !important;
+      white-space: normal !important;
+      
     }
     .lesson-board-dot {
       width: 35px;

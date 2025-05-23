@@ -51,14 +51,12 @@ function saveSectionProgress(level: string, section: number, state: ProgressStat
 
 // Boards para el LessonBoard
 
-
-
 const lessonBoards = [
   {
     title: "LESSON 1: Self-introduction",
     content: (
       <>
-        <p>
+        <p >
           <span role="img" aria-label="german-flag">🇩🇪</span> <strong>DEUTSCH:</strong><br />
           Hallo! Ich heiße Lina und ich komme aus Kolumbien. Ich bin Lehrerin von Beruf. Und du?
         </p>
@@ -66,7 +64,7 @@ const lessonBoards = [
           <span role="img" aria-label="british-flag">🇬🇧</span> <strong>Explanation in English:</strong><br />
           “Hello! My name is Lina and I come from Colombia. I am a teacher by profession. And you?”
         </p>
-        <div style={{ textAlign: 'left', margin: '1.2rem auto', maxWidth: '580px' }}>
+        <div style={{ textAlign: 'left', margin: '1.2rem 0' }}>
           <strong>This short paragraph introduces:</strong>
           <ul>
             <li><span style={{ color: '#ea2626', fontWeight: 700 }}>Name →</span> Ich heiße…</li>
@@ -80,72 +78,72 @@ const lessonBoards = [
   },
   {
     title: "Example",
-  content: (
-    <div>
-      <b>Presentation example:</b>
-      <br />
-      <span style={{ color: "#3b82f6" }}>
-        Hallo! Ich heiße Marco und ich bin Ingenieur aus Deutschland.
-      </span>
-      <br /><br />
-      <b>Translates:</b>
-      <br />
-      <span>Hello! My name is Marco and I am an engineer from Germany.</span>
-      <br /><br />
-      <b>More examples:</b>
-      <ul>
-        <li>
-          <span style={{ color: "#3b82f6" }}>
-            Ich heiße Julia. Ich bin Studentin. Ich komme aus Kolumbien.
-          </span>
-          <span> (My name is Julia. I am a student.<br></br> I come from Colombia.)</span>
-        </li>
-        <li>
-          <span style={{ color: "#3b82f6" }}>
-            Ich heiße Paul und ich bin Lehrer von Beruf.
-          </span>
-          <span> (My name is Paul and I am a teacher by profession.)</span>
-        </li>
-      </ul>
-      <div style={{ background: "#ffeaea", padding: "12px 16px", borderRadius: "8px", margin: "15px 0" }}>
-        <strong>Common mistake:</strong>
+    content: (
+      <div>
+        <b>Presentation example:</b>
         <br />
-        <span style={{ color: "#e53935" }}>
-          ❌ "Ich heiße Lehrer." <b>Incorrect!</b>
-          <br />
-          <b style={{ color: "#22c55e" }}>✔ Correct: "Ich bin Lehrer von Beruf."</b>
+        <span style={{ color: "#3b82f6" }}>
+          Hallo! Ich heiße Marco und ich bin Ingenieur aus Deutschland.
         </span>
+        <br /><br />
+        <b>Translates:</b>
+        <br />
+        <span>Hello! My name is Marco and I am an engineer from Germany.</span>
+        <br /><br />
+        <b>More examples:</b>
+        <ul>
+          <li>
+            <span style={{ color: "#3b82f6" }}>
+              Ich heiße Julia. Ich bin Studentin. Ich komme aus Kolumbien.
+            </span>
+            <span> (My name is Julia. I am a student.<br />I come from Colombia.)</span>
+          </li>
+          <li>
+            <span style={{ color: "#3b82f6" }}>
+              Ich heiße Paul und ich bin Lehrer von Beruf.
+            </span>
+            <span> (My name is Paul and I am a teacher by profession.)</span>
+          </li>
+        </ul>
+        <div style={{ background: "#ffeaea", padding: "12px 16px", borderRadius: "8px", margin: "15px 0" }}>
+          <strong>Common mistake:</strong>
+          <br />
+          <span style={{ color: "#e53935" }}>
+            ❌ "Ich heiße Lehrer." <b>Incorrect!</b>
+            <br />
+            <b style={{ color: "#22c55e" }}>✔ Correct: "Ich bin Lehrer von Beruf."</b>
+          </span>
+        </div>
       </div>
-    </div>
-  ),
+    ),
   },
   {
     title: "Tip",
-  content: (
-    <div>
-      <b>Tip:</b>
-      <span style={{ color: "#f97316" }}>"Ich bin … von Beruf"</span> is used to talk about professions, not temporary jobs or being a student.
-      <br /><br />
-      <span>
-        For students, simply say: <b>Ich bin Student/Studentin.</b>
-      </span>
-      <br /><br />
-      <div style={{ background: "#e3fcec", padding: "10px 16px", borderRadius: "8px", margin: "10px 0" }}>
-        <b>Grammar note:</b> Remember to match the gender of the profession: Lehrer (m), Lehrerin (f).
-      </div>
-      <br />
-      <span>
-        <b>How to ask:</b> 
+    content: (
+      <div>
+        <b>Tip:</b>
+        <span style={{ color: "#f97316" }}>"Ich bin … von Beruf"</span> is used to talk about professions, not temporary jobs or being a student.
+        <br /><br />
+        <span>
+          For students, simply say: <b>Ich bin Student/Studentin.</b>
+        </span>
+        <br /><br />
+        <div style={{ background: "#e3fcec", padding: "10px 16px", borderRadius: "8px", margin: "10px 0" }}>
+          <b>Grammar note:</b> Remember to match the gender of the profession: Lehrer (m), Lehrerin (f).
+        </div>
         <br />
-        Was bist du von Beruf? (What is your profession?)<br />
-        Bist du Student/Studentin? (Are you a student?)
-      </span>
-      <br /><br />
-      <span>
-        ¿And you? — <b>Und du?</b>
-      </span>
-    </div>
-  ),
+        <span>
+          <b>How to ask:</b> 
+          <br />
+          Was bist du von Beruf? (What is your profession?)<br />
+          Bist du Student/Studentin? (Are you a student?)
+        </span>
+        <br /><br />
+        <span>
+          ¿And you? — <b>Und du?</b>
+        </span>
+      </div>
+    ),
   },
   {
     title: "Concepts",
@@ -169,7 +167,6 @@ const lessonBoards = [
         </div>
       </div>
     ),
-    
   },
   {
     title: "Greetings 👋",
@@ -197,7 +194,7 @@ const lessonBoards = [
           </p>
           <p>In Germany, "Guten Tag" is used as a general greeting during the day. </p>
         </div>
-        <div style={{ display: "flex", justifyContent: "center", margin: "10px 0" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", margin: "10px 0" }}>
           <div style={{ display: "flex", alignItems: "center", margin: "0 15px" }}>
             <span style={{ fontSize: "2rem", marginRight: "10px" }}>🌅</span>
             <span>Guten Morgen!</span>
@@ -292,11 +289,10 @@ const lessonBoards = [
           background: "#f8fafc",
           borderRadius: 14,
           padding: "20px 30px",
-          margin: "0 auto 16px auto",
-          boxShadow: "0 2px 8px #e0e7ef22",
-          maxWidth: 600
+          margin: "16px 0",
+          boxShadow: "0 2px 8px #e0e7ef22"
         }}>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#3b82f6", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Lina
             </div>
@@ -307,7 +303,7 @@ const lessonBoards = [
               </div>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#facc15", color: "#3a3a3a", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Marco
             </div>
@@ -318,7 +314,7 @@ const lessonBoards = [
               </div>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#3b82f6", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Lina
             </div>
@@ -329,7 +325,7 @@ const lessonBoards = [
               </div>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
             <div style={{ background: "#facc15", color: "#3a3a3a", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Marco
             </div>
@@ -347,7 +343,6 @@ const lessonBoards = [
       </div>
     )
   },
-
   {
     title: "Professions 💼",
     content: (
@@ -455,11 +450,10 @@ const lessonBoards = [
           background: "#f9f6ff",
           borderRadius: 14,
           padding: "20px 30px",
-          margin: "0 auto 16px auto",
-          boxShadow: "0 2px 8px #e0e7ef22",
-          maxWidth: 600
+          margin: "16px 0",
+          boxShadow: "0 2px 8px #e0e7ef22"
         }}>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Lina
             </div>
@@ -470,7 +464,7 @@ const lessonBoards = [
               </div>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#a3e635", color: "#25431b", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Marco
             </div>
@@ -481,7 +475,7 @@ const lessonBoards = [
               </div>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Lina
             </div>
@@ -492,7 +486,7 @@ const lessonBoards = [
               </div>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
             <div style={{ background: "#a3e635", color: "#25431b", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Marco
             </div>
@@ -503,7 +497,7 @@ const lessonBoards = [
               </div>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
             <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
               Lina
             </div>
@@ -521,7 +515,6 @@ const lessonBoards = [
       </div>
     )
   }
-  
 ];
 
 

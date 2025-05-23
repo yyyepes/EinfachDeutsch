@@ -106,8 +106,8 @@
 }
 
 .flashcardhouse-img {
-  width: 88px;
-  height: 78px;
+  width: auto;
+  height: 83px;
   object-fit: cover;
   margin-right: 1rem !important;
   vertical-align: middle;

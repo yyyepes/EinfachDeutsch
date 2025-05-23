@@ -514,7 +514,28 @@ const lessonBoards = [
         </div>
       </div>
     )
-  }
+  },{
+      title: "Note: Articles in German & English",
+      content: (
+        <div>
+          <div style={{ fontWeight: 700, marginBottom: 12 }}>Key Concept:</div>
+          <div style={{ lineHeight: 1.7 }}>
+            In German, every noun has a definite article that shows its gender:<br />
+            <b>der</b> (masculine), <b>die</b> (feminine), <b>das</b> (neuter).<br />
+            In English, the article is always <b>the</b>, no matter the gender.
+          </div>
+          <div style={{ background: "#fff3cd", borderRadius: 8, padding: "8px 15px", marginTop: 16 }}>
+            <span role="img" aria-label="info">ℹ️</span>
+            <b style={{ marginLeft: 6 }}>Tip:</b> Remember! The German article changes, but English stays the same.<br />
+            <span style={{ color: "#a86d00" }}>
+              <b>die Schule</b> = <b>the school</b><br />
+              <b>der Apfel</b> = <b>the apple</b><br />
+              <b>das Haus</b> = <b>the house</b>
+            </span>
+          </div>
+        </div>
+      ),
+    }
 ];
 
 

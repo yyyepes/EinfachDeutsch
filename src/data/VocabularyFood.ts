@@ -23,70 +23,70 @@ export const vocabularyFood = [
   {
     category: "Food",
     german: "der Apfel",
-    translation: "apple",
+    translation: "Apple",
     imageUrl: "/imagesF/apfel.png",
     use: "Ich esse gern einen Apfel. (I like to eat an apple.)"
   },
   {
     category: "Food",
     german: "das Brot",
-    translation: "bread",
+    translation: "Bread",
     imageUrl: "/imagesF/brot.png",
     use: "Zum Frühstück esse ich Brot. (I eat bread for breakfast.)"
   },
   {
     category: "Food",
     german: "die Milch",
-    translation: "milk",
+    translation: "Milk",
     imageUrl: "/imagesF/milch.png",
     use: "Milch ist gesund. (Milk is healthy.)"
   },
   {
     category: "Food",
     german: "der Käse",
-    translation: "cheese",
+    translation: "Cheese",
     imageUrl: "/imagesF/kaese.png",
     use: "Ich mag Käse auf Pizza. (I like cheese on pizza.)"
   },
   {
     category: "Food",
     german: "das Ei",
-    translation: "egg",
+    translation: "Egg",
     imageUrl: "/imagesF/ei.png",
     use: "Ich koche ein Ei. (I cook an egg.)"
   },
   {
     category: "Food",
     german: "die Tomate",
-    translation: "tomato",
+    translation: "Tomato",
     imageUrl: "/imagesF/tomate.png",
     use: "Die Tomate ist rot. (The tomato is red.)"
   },
   {
     category: "Food",
     german: "die Banane",
-    translation: "banana",
+    translation: "Banana",
     imageUrl: "/imagesF/banane.png",
     use: "Affe isst eine Banane. (Monkey eats a banana.)"
   },
   {
     category: "Food",
     german: "die Suppe",
-    translation: "soup",
+    translation: "Soup",
     imageUrl: "/imagesF/suppe.png",
     use: "Ich esse Suppe zum Mittagessen. (I eat soup for lunch.)"
   },
   {
     category: "Food",
     german: "das Wasser",
-    translation: "water",
+    translation: "Water",
     imageUrl: "/imagesF/wasser.png",
     use: "Trinkst du Wasser? (Do you drink water?)"
   },
   {
     category: "Food",
     german: "das Fleisch",
-    translation: "meat",
+    translation: "Meat",
     imageUrl: "/imagesF/fleisch.png",
     use: "Fleisch ist teuer. (Meat is expensive.)"
   },

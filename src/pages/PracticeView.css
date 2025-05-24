@@ -136,6 +136,8 @@
   display: block;
   margin-top: 0.2em;
 }
+
+
 /* Tablets y pantallas medianas (≤ 1050px): pingüino centrado abajo */
 @media (max-width: 1210px) {
   .klaus-img-fixed {

@@ -6,7 +6,7 @@
 }
 
 .flashcard-card {
-  width: 490px;
+  width: 555px;
   max-width: 98vw;   /* <-- asegura que nunca sobrepase el viewport */
   min-height: 330px;
   background: #378bfa;

@@ -156,3 +156,18 @@
     }
   }
   
+  @media (max-width: 600px) {
+    .lesson-board-nav {
+      flex-direction: column !important;   /* <- ¡NO cambiar a column! */
+      gap: 0.2rem;
+      margin: 0.9rem 0 0.5rem 0;
+    }
+    .lesson-board-pager {
+      flex-wrap: wrap;
+      gap: 0.38rem;
+      justify-content: center;
+      width: 99vw;
+    }
+  
+  }
+  

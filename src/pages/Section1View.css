@@ -148,7 +148,7 @@ html, body {
 }
 
 .klaus-img {
-  width: 400px !important;
+  width: 395px !important;
   height: auto;
   margin-bottom: 0.6rem;
   filter: drop-shadow(0 8px 32px #38bdf880); /* Sombra azul suave */
@@ -226,6 +226,15 @@ html, body {
   background-color: #0284c7;
   color: white;
 }
+.intro-reminder {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #020610;
+  margin-top: 1rem !important;
+ 
+}
+
 
 @media (max-width: 1000px) {
   .section-view-container {
@@ -248,10 +257,10 @@ html, body {
   }
 
   .section-title-centered {
-    margin: 1rem auto;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    
+    font-size: 1rem;
+    padding: 0.4rem 0.7rem;
+    width: 98%;
+    max-width: 98vw;
   }
 
   .klaus-img {
@@ -296,7 +305,7 @@ html, body {
   width: 100%;
   display: flex;
   justify-content: center;   /* Centrado horizontal */
-  margin-top: 0.5rem;        /* Más cerca del pingüino */
+  margin-top: -2.5rem !important;        /* Más cerca del pingüino */
   margin-bottom: 0;          /* Sin margen inferior extra */
   margin-left: 7rem;
 }

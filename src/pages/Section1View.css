@@ -53,9 +53,8 @@ html, body {
   transform: scale(1.045);
 }
 .section-title-centered {
-  width: 90%;
-  max-width: 650px;
-  margin: 2rem auto 0 auto;
+  display: block;
+  margin: 1.2rem auto 0 auto;
   background-color: #3b82f6;
   padding: 0.6rem 2rem;
   border-radius: 2rem;
@@ -64,9 +63,11 @@ html, body {
   font-size: 1.3rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(59,130,246,0.05);
-  width: max-content;
-  margin-right: 21rem;  
+  /* Centrado real y responsivo: */
+  width: fit-content;
+  max-width: 98vw;
 }
+
 
 .section-sidebar {
   display: flex;
@@ -228,7 +229,7 @@ html, body {
 }
 .intro-reminder.tip {
   display: block;
-  font-size: 1rem; /* similar tamaño */
+  font-size: 1.17rem; /* similar tamaño */
   color: #42657a; /* color azul-grisáceo */
   margin-top: 0.4rem;
   text-align: center;
@@ -243,7 +244,7 @@ html, body {
 
 
 
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
   .section-view-container {
     flex-direction: column;
     align-items: center;
@@ -265,8 +266,8 @@ html, body {
 
   .section-title-centered {
     font-size: 1rem;
-    padding: 0.4rem 0.7rem;
-    width: 98%;
+    padding: 0.5rem 1rem;
+    width: 98vw;
     max-width: 98vw;
   }
 

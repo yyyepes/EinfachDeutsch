@@ -271,7 +271,7 @@
     margin: 0.35rem 0.6rem;
     cursor: pointer;
     transition: background 0.15s;
-    text-align: center;
+    text-align: center; 
     box-shadow: 0 2px 12px #38bdf81a;
     width: 100% !important;               /* Ocupa el ancho del contenedor .quiz-options */
     max-width: 100% !important;           /* No se pasa del contenedor */

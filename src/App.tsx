@@ -14,6 +14,7 @@ import FlashcardsFamily from './pages/FlashcardsFamily'; // <-- Importa el compo
 import Profile from './pages/Profile';
 import Reminder from './pages/Reminder';
 import OverallProgress from './pages/OverallProgress';
+import Section3View from './pages/Section3View';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/reminder" element={<Reminder />} />
         <Route path="/progress" element={<OverallProgress />} />
-
+        <Route path="/sections/a1/section-3" element={<Section3View />} />
 
       </Routes>
     </Router>

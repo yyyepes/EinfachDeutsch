@@ -294,12 +294,12 @@ const lessonBoards = [
         }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#3b82f6", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
-              Lina
+              Lena
             </div>
             <div style={{ marginLeft: 18, textAlign: "left" }}>
-              <div>Hallo! Ich heiße Lina. Ich komme aus Kolumbien. Und du?</div>
+              <div>Hallo! Ich heiße Lena. Ich komme aus Kolumbien. Und du?</div>
               <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
-                Hi! My name is Lina. I come from Colombia. And you?
+                Hi! My name is Lena. I come from Colombia. And you?
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@ const lessonBoards = [
               Marco
             </div>
             <div style={{ marginLeft: 18, textAlign: "left" }}>
-              <div>Hallo Lina! Ich heiße Marco. Ich komme aus Spanien.</div>
+              <div>Hallo Lena! Ich heiße Marco. Ich komme aus Spanien.</div>
               <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
                 Hi Lina! My name is Marco. I come from Spain.
               </div>
@@ -316,7 +316,7 @@ const lessonBoards = [
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#3b82f6", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
-              Lina
+              Lena
             </div>
             <div style={{ marginLeft: 18, textAlign: "left" }}>
               <div>Bist du Spanier?</div>
@@ -455,7 +455,7 @@ const lessonBoards = [
         }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
-              Lina
+              Emma
             </div>
             <div style={{ marginLeft: 18, textAlign: "left" }}>
               <div>Was bist du von Beruf?</div>
@@ -466,7 +466,7 @@ const lessonBoards = [
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#a3e635", color: "#25431b", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
-              Marco
+              Thomas
             </div>
             <div style={{ marginLeft: 18, textAlign: "left" }}>
               <div>Ich bin Ingenieur von Beruf. Und du?</div>
@@ -477,7 +477,7 @@ const lessonBoards = [
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", marginBottom: 14, justifyContent: "center" }}>
             <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
-              Lina
+              Emma
             </div>
             <div style={{ marginLeft: 18, textAlign: "left" }}>
               <div>Ich bin Lehrerin. 👩‍🏫</div>
@@ -488,7 +488,7 @@ const lessonBoards = [
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
             <div style={{ background: "#a3e635", color: "#25431b", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
-              Marco
+              Thomas
             </div>
             <div style={{ marginLeft: 18, textAlign: "left" }}>
               <div>Arbeitest du an einer Schule?</div>
@@ -499,12 +499,12 @@ const lessonBoards = [
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
             <div style={{ background: "#06b6d4", color: "#fff", borderRadius: 16, padding: "7px 18px", fontWeight: 500, minWidth: 70, textAlign: "center" }}>
-              Lina
+              Emma
             </div>
             <div style={{ marginLeft: 18, textAlign: "left" }}>
-              <div>Ja, ich arbeite in Bogotá.</div>
+              <div>Ja, ich arbeite in Berlin.</div>
               <div style={{ fontSize: "0.98rem", color: "#475569", marginTop: 2 }}>
-                Yes, I work in Bogotá.
+                Yes, I work in Berlin.
               </div>
             </div>
           </div>
@@ -602,7 +602,7 @@ export default function Section1View() {
       </div>
 
       <div className="section-title-centered">
-        “Self-introduction / Countries / Occupations”
+        “Self-introduction / Countries / Professions”
       </div>
 
       <div className="section-view-container">

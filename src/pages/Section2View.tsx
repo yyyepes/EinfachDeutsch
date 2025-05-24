@@ -833,6 +833,10 @@ export default function Section2View() {
                   {lessonView === "" ? (
                     <>
                       <div className="klaus-balloon-container">
+                      <span className="intro-reminder tip">
+                          Don’t forget to mark your lessons, activities, quiz,<br />
+                          and section as <span className="done-green">done</span> to track your progress!
+                         </span>
                         <img src={klaus} className="klaus-img" alt="Klaus mascot" />
                       </div>
                       <div className="next-btn-wrapper-intro">

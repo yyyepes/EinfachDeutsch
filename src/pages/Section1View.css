@@ -54,8 +54,8 @@ html, body {
 }
 .section-title-centered {
   width: 90%;
-  max-width: 600px;
-  margin: 1.2rem auto 0 auto;
+  max-width: 650px;
+  margin: 2rem auto 0 auto;
   background-color: #3b82f6;
   padding: 0.6rem 2rem;
   border-radius: 2rem;
@@ -226,14 +226,21 @@ html, body {
   background-color: #0284c7;
   color: white;
 }
-.intro-reminder {
+.intro-reminder.tip {
   display: block;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #020610;
-  margin-top: 1rem !important;
- 
+  font-size: 1rem; /* similar tamaño */
+  color: #42657a; /* color azul-grisáceo */
+  margin-top: 0.4rem;
+  text-align: center;
+  font-weight: 400; /* sin negrilla */
+  letter-spacing: 0.02em;
 }
+
+.intro-reminder .done-green {
+  color: #10b981;
+  font-weight: 500;
+}
+
 
 
 @media (max-width: 1000px) {

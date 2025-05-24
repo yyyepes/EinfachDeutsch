@@ -147,6 +147,130 @@ export interface Question {
         ],
         answer: 3,
       },
+      {
+        question: "Welche Buchstaben sind Umlaute im Deutschen? (Which letters are umlauts in German?)",
+        options: [
+          "Ä, Ö, Ü",
+          "É, È, Ê",
+          "A, O, U",
+          "Ë, Ï, Ü"
+        ],
+        answer: 0
+      },{
+        question: "Wie sagt man '21' auf Deutsch? (How do you say '21' in German?)",
+        options: [
+          "einsundzwanzig",
+          "einundzwanzig",
+          "zwanzigeins",
+          "zwanzeins"
+        ],
+        answer: 1 // einundzwanzig
+      },
+      {
+        question: "Welches dieser Wörter enthält das Eszett? (Which of these words contains the Eszett?)",
+        options: [
+          "Stern",
+          "Stein",
+          "Straße",
+          "Stuhl"
+        ],
+        answer: 2 // Straße
+      },
+      {
+        question: "Was ist das Personalpronomen für 'she'? (What is the personal pronoun for 'she'?)",
+        options: [
+          "sie",
+          "es",
+          "wir",
+          "er"
+        ],
+        answer: 0
+      },{
+        question: "Wähle die korrekte Konjugation: Ihr ____ Fußball. (Choose the correct conjugation: You (all) ____ football.)",
+        options: [
+          "spielen",
+          "spielt",
+          "spiele",
+          "spielst"
+        ],
+        answer: 1
+      },{
+        question: "Wie sagt man '8' auf Deutsch? (How do you say '8' in German?)",
+        options: [
+          "acht",
+          "achtzehn",
+          "achtzig",
+          "achten"
+        ],
+        answer: 0
+      },{
+        question: "Was ist die richtige Präsens-Endung für 'wir'? (What is the correct present tense ending for 'wir'?)",
+        options: [
+          "-e",
+          "-t",
+          "-st",
+          "-en"
+        ],
+        answer: 3
+      },
+      {
+        question: "Was ist die korrekte Schreibweise für die Zahl 17 auf Deutsch? (What is the correct spelling for the number 17 in German?)",
+        options: [
+          "siebzehn",
+          "siebzehn",
+          "siebensehn",
+          "siebzhen"
+        ],
+        answer: 0
+      },{
+        question: "Welcher Buchstabe wird im deutschen Alphabet 'yot' genannt? (Which letter is called 'yot' in the German alphabet?)",
+        options: [
+          "Y",
+          "J",
+          "U",
+          "Z"
+        ],
+        answer: 1
+      },{
+        question: "Was ist das Personalpronomen für 'it' auf Deutsch? (What is the personal pronoun for 'it' in German?)",
+        options: [
+          "es",
+          "sie",
+          "er",
+          "wir"
+        ],
+        answer: 0
+      },{
+        question: "In welchem dieser Wörter steht das Eszett ? (In which of these words is there an Eszett ?)",
+        options: [
+          "groß",
+          "Masse",
+          "Bus",
+          "Kaffee"
+        ],
+        answer: 0 // groß
+      },
+      {
+        question: "Was ist das Personalpronomen für 'you' (informell, Singular) auf Deutsch? (What is the personal pronoun for 'you' (informal, singular) in German?)",
+        options: [
+          "du",
+          "Sie",
+          "ihr",
+          "er"
+        ],
+        answer: 0
+      },
+      {
+        question: "Welches Pronomen benutzt man für eine Gruppe von Freunden? (Which pronoun do you use for a group of friends?)",
+        options: [
+          "du",
+          "ihr",
+          "er",
+          "sie"
+        ],
+        answer: 1
+      },
       
+  
   ];
   

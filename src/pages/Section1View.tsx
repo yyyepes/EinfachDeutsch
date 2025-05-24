@@ -698,10 +698,11 @@ export default function Section1View() {
                   {lessonView === "" ? (
                     <>
                       <div className="klaus-balloon-container">
-                      <span className="intro-reminder">
-                       Don’t forget to <b>mark</b> your lessons, activities, quiz,<br />
-                       and section as <span style={{ color: "#10b981" }}>done</span> to track your progress!
-                       </span>
+                      <span className="intro-reminder tip">
+                          Don’t forget to mark your lessons, activities, quiz,<br />
+                          and section as <span className="done-green">done</span> to track your progress!
+                         </span>
+
                         <img src={klaus} className="klaus-img" alt="Klaus mascot" />
                       </div>
                       <div className="next-btn-wrapper-intro">
